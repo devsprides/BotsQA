@@ -47,7 +47,8 @@
             userId = generateUserId();
             user = { id: userId };
             directLineConn = window.WebChat.createDirectLine({ 
-                secret_0: 'qdBrGZG1wI8.qZhe_NPp-PxpEXi76UzNpQH7qVucs4t4Lpr9oNsbD8A',
+                secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
+                secret_qa: 'q5BKuQ62MNk.cwA.77U.B9owAp3RX5LmTFXjMba8x6CibT2_9hW55MjxAvXHbgQ',
                 secret: 'q5BKuQ62MNk.cwA.77U.B9owAp3RX5LmTFXjMba8x6CibT2_9hW55MjxAvXHbgQ',
                 user: user,
                 bot: { id: 'Bot' }
