@@ -49,7 +49,7 @@
             user = { id: userId };
             directLineConn = window.WebChat.createDirectLine({ 
                 secret_0: 'qdBrGZG1wI8.qZhe_NPp-PxpEXi76UzNpQH7qVucs4t4Lpr9oNsbD8A',
-                secret: 'NY5UjyJFCMc.elW2fIooICnN5z6LX828kS_D3_E_9k65LzIYQ-Ocx84',
+                secret: '-SXheYxOKgU.ikjUoBYardOol7CaJ9uV3rThStqPyEt2ZopfsBcQZYw',
                 user: user,
                 bot: { id: 'Bot' }
                 ,resize: 'detect'
