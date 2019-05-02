@@ -1,0 +1,320 @@
+
+.minimizable-web-chat > button.maximize {
+    background-color: #47afe7;
+    border-radius: 14%;
+    border: 0px solid #47afe7;
+    bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    color: White;
+    cursor: pointer;
+    font-size: 30px;
+    height: 64px;
+    outline: 0;
+    /* padding: 15px; */
+    position: fixed;
+    right: 20px;
+    width: 64px;
+    background: url('./img/00-Avatar-Burbuja.png');
+    background-size: contain;
+}
+
+.minimizable-web-chat > button.maximize img {
+    border-radius: 50%; 
+    position: fixed; 
+    right: 20px; 
+    bottom: 20px;
+}
+
+.minimizable-web-chat > button.maximize:focus:not(:active),
+.minimizable-web-chat > button.maximize:hover:not(:active) {
+    background-color: #2a9df5;
+    border-color: #2a9df5;
+}
+
+.minimizable-web-chat > button.maximize:active {
+    background-color: White;
+    color: #47afe7;
+}
+
+.minimizable-web-chat > button.maximize.chat-button-hidden  {
+    visibility: hidden;
+}
+
+@media (min-width:551px){
+    .minimizable-web-chat > .chat-box {
+        /* backdrop-filter: blur(10px); */
+        /* box-shadow: 0 0 20px rgba(0, 0, 0, .2); */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+        /* border-radius: 6px;
+        border: 6px solid #8dc12c; */
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        min-width: 320px;
+        position: fixed;
+        top: 100px;
+        z-index: 3;
+        min-height: 300px;
+        width: 30%;
+        visibility: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+@media (max-width:550px){
+    .minimizable-web-chat > .chat-box {
+        /* backdrop-filter: blur(10px); */
+        /* box-shadow: 0 0 20px rgba(0, 0, 0, .2); */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+        /* border-radius: 6px;
+        border: 6px solid #8dc12c; */
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        min-width: 320px;
+        position: fixed;
+        top: 20px;
+        z-index: 3;
+        /* min-height: 300px; */
+        width: 30%;
+        visibility: hidden;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+}
+
+.minimizable-web-chat > .chat-box.chat-visible {
+    visibility: visible;
+}
+
+.minimizable-web-chat > .chat-box.right {
+    right: 20px;
+}
+
+.minimizable-web-chat > .chat-box header {
+    background-color: #FF692D;
+    height: 45px;
+    display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.minimizable-web-chat > .chat-box header .title {
+    margin: auto 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.minimizable-web-chat > .chat-box header .title .picture{
+    width: 32px;
+    height: 32px;
+    background: url('./img/00-Avatar-Chat.png');
+    background-size: contain;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.minimizable-web-chat > .chat-box header .title .text{
+    margin-left: 5px;
+}
+
+.minimizable-web-chat > .chat-box header .title .name{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.minimizable-web-chat > .chat-box header .title .status .green_dot{
+    width: 10px;
+    height: 10px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.minimizable-web-chat > .chat-box header .title .status label{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+}
+
+/* .minimizable-web-chat > .chat-box header .title label {
+    text-align: center;
+    max-height: 20px;
+    font-size: 16px;
+    margin-bottom: 0;
+} */
+
+.minimizable-web-chat > .chat-box header .buttons {
+    /* width: 10%; */
+    margin-right: 10px;
+    /* height: 60%; */
+    margin-top: auto;
+    margin-bottom: auto;
+    display: flex;
+}
+
+.minimizable-web-chat > .chat-box header .buttons div{
+    cursor: pointer;
+}
+
+.minimizable-web-chat > .chat-box header .buttons div img {
+    width: 20px;
+    height: 20px;
+}
+
+/* .minimizable-web-chat > .chat-box > header > .minimize-chat > img {
+    width: 30px;
+    height: 100%;
+    cursor: pointer;
+
+    position: relative;
+    padding-bottom: 5px;
+} */
+
+.minimizable-web-chat > .chat-box > #webchat {
+    flex: 1;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    /* max-height: 91%; */
+
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
+}
+
+/*Container-1, inside #webchat*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1t62idy.css-cwp94z{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/*Container-2, inside Container-1, contains messages*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-mfy564 {
+    /* border:1px solid red; */
+    /* background-color: rgba(232,242,254, 1); */
+}
+
+.minimizable-web-chat > .chat-box > #webchat 
+.markdown.css-o3xlyv{
+    background-color: #F1F8FE
+}
+
+/* Input for entering messages */
+.minimizable-web-chat > .chat-box > #webchat 
+form.css-1yaojre.css-1sjcwuh.css-1fe8kfc input{
+    background-color: #EDF0F5;
+}
+
+/* Bubbles with text from bot and user */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.bubble {
+    border: none;
+}
+
+/* Bubbles with text from user */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.from-user.bubble {
+    color: white;
+    background-color: #FF692D;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Bubbles with buttons */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.attachment.bubble {
+    background-color: transparent;
+    border: none;
+}
+
+/* List of buttons */
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container .ac-actionSet button{
+    color: #FF692D;
+    border-color: #FF692D;
+    border-bottom: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container .ac-actionSet button:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container .ac-actionSet button:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container .ac-actionSet > div{
+    display: none;
+}
+
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-mfy564 #animation-item .css-ostbv8.bubble {
+    width: 100% !important;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+/*Container-3, inside Container-1, input for entering messages*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1lmr15n.css-1882x3w.css-1l9a57c{
+    /* border:2px solid yellowgreen; */
+}
+
+/*Floating button with text "New messages"*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1r0h5kb {
+    
+}
+
+/*Container of each message*/
+.minimizable-web-chat > .chat-box > #webchat 
+li .content .row{
+    max-width: 100%;
+    margin: auto 0;
+} 
+
+/*Container of each message's hour*/
+.minimizable-web-chat > .chat-box > #webchat 
+li .content .row.message{
+    max-width: 100%;
+    margin: auto 0;
+}
+
+/*Container of image upload button*/
+.minimizable-web-chat > .chat-box > #webchat
+.css-1lzfo2b.css-15g3li9{
+    display: none;
+}
+
+.css-7xorrq.avatar{
+    display: none;
+}
+
+button.css-17vq3lb .css-bo8nme{
+    background-color: #1E23E6;
+    /* width: 40px; */
+}
+
+button.css-17vq3lb .css-bo8nme svg{
+    fill: white;
+}
+
+.css-1lzfo2b.css-14x775w{
+    display: none;
+}

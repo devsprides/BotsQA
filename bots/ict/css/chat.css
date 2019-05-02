@@ -1,0 +1,453 @@
+@font-face {
+	font-family: 'GothamBook';
+	src: url('./GothamBook.eot');
+    src: local('GothamBook'), url('../fonts/GothamBook/GothamBook.woff') format('woff'), 
+        url('../fonts/GothamBook/GothamBook.ttf') format('truetype');
+}
+
+.minimizable-web-chat > button.maximize {
+    background-color: #8DC63F;
+    border-radius: 50%;
+    border: 0px solid #8DC63F;
+    bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    color: White;
+    cursor: pointer;
+    font-size: 30px;
+    height: 64px;
+    outline: 0;
+    position: fixed;
+    right: 20px;
+    width: 64px;
+    z-index: 16777271; /* This is the max value for z-index on Safari, on Chrome and others it's 2147483647 */
+}
+
+.minimizable-web-chat > button.maximize img {
+    border-radius: 50%; 
+    position: fixed; 
+    right: 20px; 
+    bottom: 20px;
+}
+
+.minimizable-web-chat > button.maximize:focus:not(:active),
+.minimizable-web-chat > button.maximize:hover:not(:active) {
+    background-color: #7dac25;
+    border-color: #7dac25;
+}
+
+.minimizable-web-chat > button.maximize:active {
+    background-color: White;
+    color: #8DC63F;
+}
+
+.minimizable-web-chat > button.maximize.chat-button-hidden  {
+    visibility: hidden;
+}
+
+.minimizable-web-chat > .chat-box {
+    z-index: 16777271; /* This is the max value for z-index on Safari, on Chrome and others it's 2147483647 */
+    background-color: rgba(255, 255, 255, 0);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+	visibility: hidden;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+    top: 40px;
+    width: 375px;
+	/* width: 30%;
+	min-width: 320px;
+	max-width: 500px; */
+}
+@media (min-width:551px){
+    .TEMP .minimizable-web-chat > .chat-box {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        min-width: 320px;
+        position: fixed;
+        top: 60px;
+        min-height: 300px;
+        width: 30%;
+        visibility: hidden;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        /* border: 3px solid green; */
+    }
+}
+@media (max-width:550px){
+    .TEMP .minimizable-web-chat > .chat-box {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        min-width: 320px;
+        position: fixed;
+        top: 20px;
+        width: 30%;
+        visibility: hidden;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    .minimizable-web-chat > .chat-box {
+        width: 350px;
+
+    }
+}
+
+.minimizable-web-chat > .chat-box.chat-visible {
+    visibility: visible;
+}
+
+.minimizable-web-chat > .chat-box.right {
+    right: 20px;
+}
+
+.minimizable-web-chat > .chat-box > header {
+    background-color: #8DC63F;
+    height: 9%;
+    min-height: 50px;
+    display: flex;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    box-shadow: 0 -3px 20px rgba(0, 0, 0, .2);
+}
+
+.header-image{
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3; /*TODO: Enable this z-index when deploying*/
+    /*z-index: 16777271; /* This is the max value for z-index on Safari, on Chrome and others it's 2147483647 */
+    width: 100%;
+    height: auto;
+    margin-bottom: -7.2%;
+	-webkit-margin-after: -13%;
+}
+/*Edge*/
+@supports (-ms-ime-align:auto) {
+    .header-image {
+        /* margin-bottom: -28px; */
+        margin-bottom: -48px;
+    }
+}
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .header-image {
+        /* display: none; */
+        height: 100px;
+        margin-bottom: -13.5%;
+    }
+}
+
+@media (max-width:550px) {
+    .header-image {
+        display: none;
+    }
+}
+
+.minimizable-web-chat > .chat-box > header > .title {
+    margin: auto 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* font-family: 'GothamBook' !important; */
+}
+
+.minimizable-web-chat > .chat-box > header > .title > .title-username {
+    max-height: 20px;
+}
+
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.minimizable-web-chat > .chat-box > header > .title > .title-username {
+		margin-top: 5px;
+    }
+}
+
+.minimizable-web-chat > .chat-box > header > .title > .title-username > label {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.minimizable-web-chat > .chat-box > header > .title > .title-username > img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 6px; /* TODO: center vertically instead of setting margin-botton */
+    margin-left: 4px;
+}
+
+.minimizable-web-chat > .chat-box > header > .title .title-online-status {
+    max-height: 12px;
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.minimizable-web-chat > .chat-box > header > .filler {
+    flex: 0 10000 100%;
+}
+
+.minimizable-web-chat > .chat-box > header > button.minimize {
+    height: 50px;
+    background-color: Transparent;
+    border: 0;
+    color: White;
+    cursor: pointer;
+    outline: 0;
+    padding: 0 12px;
+}
+
+.minimizable-web-chat > .chat-box > header > .minimize-chat {
+    margin-right: 1px;
+}
+
+.minimizable-web-chat > .chat-box > header > .close-chat {
+    margin-right: 15px;
+}
+
+.minimizable-web-chat > .chat-box > header > .minimize-chat > img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    position: relative;
+    top: 12px;
+}
+
+.minimizable-web-chat > .chat-box > header > .close-chat > img {
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    cursor: pointer;
+
+    position: relative;
+    top: 14px;
+}
+
+.popover-title {
+    background-color: #8DC63F !important;
+    color: white !important;
+}
+
+.popover-content{
+    background-color: white;
+}
+
+.popover-content > label{
+    font-size: 0.9em;
+}
+
+.popover-footer {
+    margin: 2px auto;
+    text-align: center;
+}
+
+.popover-content button,
+.popover-content button:active,
+.popover-content button:hover,
+.popover-content button:focus {
+    /* Marked with !important because styles are being overriden by other styles of ICT website*/
+    background-color: #8DC63F!important;
+    border-color: #8DC63F !important;
+    color: white !important;
+    font-size: 10px !important;
+    height: auto !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    margin-right: 5px !important;
+    letter-spacing: normal !important;
+    border-radius: 8px !important;
+}
+
+/* .minimizable-web-chat > .chat-box > header > .minimize-chat:focus:not(:active),
+.minimizable-web-chat > .chat-box > header > .minimize-chat:hover:not(:active),
+.minimizable-web-chat > .chat-box > header > .close-chat:focus:not(:active),
+.minimizable-web-chat > .chat-box > header > .close-chat:hover:not(:active) {
+  color: rgba(255, 255, 255, .6);
+}
+
+.minimizable-web-chat > .chat-box > header > .minimize-chat:focus:active,
+.minimizable-web-chat > .chat-box > header > .close-chat:focus:active {
+    color: rgba(255, 255, 255, .4);
+} */
+
+.minimizable-web-chat > .chat-box > #webchat {
+    flex: 1;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    max-height: 91%;
+    width: 100%;
+    /* border: 1px solid blue; */
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
+    background-color: white;
+
+    overflow-y: hidden; /*for fixing problem in Edge and Firefox*/
+}
+
+/*Container-1, inside #webchat*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1t62idy.css-cwp94z{
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/*Container-2, inside Container-1, contains messages*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-mfy564 {
+    /* border:1px solid red; */
+}
+
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-mfy564 #animation-item .css-ostbv8.bubble {
+    width: 100% !important;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; */
+}
+
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-mfy564 #animation-item .animation-image {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Container-3, inside Container-1, input for entering messages*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1lmr15n.css-1882x3w.css-1l9a57c > div.main > form > input[type="text"]{
+    /* font-family: 'GothamBook'; */
+}
+
+/*Floating button with text "New messages"*/
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1r0h5kb {
+    
+}
+
+/*Container of each message*/
+.minimizable-web-chat > .chat-box > #webchat 
+li .content .row{
+    max-width: 100%;
+    margin: auto 0;
+} 
+
+/* Message bubbles */
+#webchat .content .bubble{
+    /* background-color: #0082FF; */
+    border-radius: 15px;
+    color: white;
+    /* font-family: 'GothamBook'; */
+}
+#webchat .content .bubble a{
+    color: white;
+}
+#webchat .content .from-user.bubble{
+    border-radius: 15px;
+    color: black;
+}
+#webchat .content .from-user.bubble p{
+    /* font-family: 'GothamBook'; */
+}
+#webchat .content .bubble button{
+    border-radius: 15px;
+    /* font-family: 'GothamBook'; */
+} 
+
+#webchat .content .bubble .markdown.css-o3xlyv{
+    /* font-family: 'GothamBook'; */
+}
+
+/* Carousel items */
+#webchat .content ul li .css-ostbv8{
+    background-color: transparent;
+    /* font-family: 'GothamBook'; */
+}
+#webchat .content .row.attachment .attachment.bubble{
+    background-color: transparent;
+    border: none;
+} 
+#webchat .content .row.attachment .attachment.bubble button.ac-pushButton{
+    background-color: #4183C2;
+    color: white;
+    font-weight: normal;
+}
+
+#webchat .content ul li .css-al3ver{
+    background-color: transparent;
+    border: none;
+}
+#webchat .content ul li .css-al3ver button.ac-pushButton{
+    background-color: #4183C2;
+    /* font-family: 'GothamBook'; */
+    border-radius: 15px;
+    color: white;
+    font-weight: normal;
+}
+
+/*IE set height of buttons' containers to fix problem of button height*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	div.ac-container > div > div > div > .ac-pushButton {
+		min-height: 42px;
+    }
+}
+
+#webchat .content ul li .css-al3ver .ac-container .ac-image img{
+    border-radius: 15px;
+}
+
+/*Container of each message's hour*/
+.minimizable-web-chat > .chat-box > #webchat 
+li .content .row.message{
+    max-width: 100%;
+    margin: auto 0;
+}
+
+/*Container of image upload button*/
+.minimizable-web-chat > .chat-box > #webchat
+.css-1lzfo2b.css-15g3li9{
+    display: none;
+}
+
+.css-7xorrq.avatar{
+    display: none;
+}
+
+/*Span with hour of message*/
+span.css-1phiexw{
+    display: none;
+}
+
+/* Suggest buttons */
+.css-1lmr15n.css-1882x3w.css-1l9a57c .css-1wegtiu li .css-1apvbjj button{
+    /* font-family: 'GothamBook'; */
+    border-radius: 15px;
+    color: white;
+    border-color: white;
+    background-color: #69a209;
+}
+.css-1lmr15n.css-1882x3w.css-1l9a57c .css-1wegtiu li .css-1apvbjj button:active{
+    color: #69a209;
+    border-color: #69a209;
+    background-color: white;
+}
+
+.minimizable-web-chat *:focus {
+    outline: none;
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <style>
+            /*@font-face {
+                font-family: 'GothamBook';
+                src: url('./GothamBook.eot');
+                src: local('GothamBook'), url('./fonts/GothamBook/GothamBook.woff') format('woff'), 
+                    url('./fonts/GothamBook/GothamBook.ttf') format('truetype');
+            }*/
+
+            html, body {
+                height: 100%
+            }
+            body {
+                margin: 0
+            }
+            #webchat, #webchat > * {
+                height: 100%;
+                width: 100%;
+                background-color: #F1F8FE;
+                /* background: -moz-linear-gradient(45deg, #b5c5a0 0%, #a5bb7d 100%);
+                background: -webkit-linear-gradient(45deg, #b5c5a0 0%,#a5bb7d 100%);
+                background: linear-gradient(45deg, #b5c5a0 0%,#a5bb7d 100%); */
+            }
+            /* #webchat .main, #webchat .main input{
+                background-color: transparent;
+                color: white;
+            } */
+            /* #webchat .main svg{
+                fill: white;
+            } */
+
+            /* Bubbles */
+            #webchat .content .bubble{
+                /* background-color: #0082FF; */
+                border-radius: 15px;
+                color: white;
+                /* font-family: 'GothamBook'; */
+            }
+            #webchat .content .bubble a{
+                color: white;
+            }
+            #webchat .content .from-user.bubble{
+                background-color: #e2e2e2;
+                border-radius: 15px;
+                color: black;
+            }
+            #webchat .content .from-user.bubble p{
+                /* font-family: 'GothamBook'; */
+            }
+            #webchat .content .bubble button{
+                border-radius: 15px;
+                /* font-family: 'GothamBook'; */
+            } 
+            #webchat .content .bubble .markdown.css-o3xlyv{
+                /* font-family: 'GothamBook'; */
+            }
+
+            /* Carousel items */
+            #webchat .content ul li .css-ostbv8{
+                background-color: transparent;
+                /* font-family: 'GothamBook'; */
+            }
+            #webchat .content .row.attachment .attachment.bubble{
+                background-color: transparent;
+                border: none;
+            } 
+            #webchat .content .row.attachment .attachment.bubble button.ac-pushButton{
+                background-color: #4183C2;
+                color: white;
+                font-weight: normal;
+            }
+
+            #webchat .content ul li .css-al3ver{
+                background-color: transparent;
+                border: none;
+            }
+            #webchat .content ul li .css-al3ver button.ac-pushButton{
+                background-color: #4183C2;
+                /* font-family: 'GothamBook'; */
+                border-radius: 15px;
+                color: white;
+                font-weight: normal;
+            }
+
+            #webchat .content ul li .css-al3ver .ac-container .ac-image img{
+                border-radius: 15px;
+            }
+            
+            /* #webchat .content .css-1phiexw, #webchat .content .css-vj6l7g{
+                color: rgba(255, 255, 255, 0.9);
+            } */
+            /* #webchat .main input::placeholder{
+                color: rgba(255, 255, 255, 0.5);
+            } */
+
+            /*Container of each message*/
+            /* .minimizable-web-chat > .chat-box >  */
+            #webchat li .content .row{
+                max-width: 100%;
+                margin: auto 0;
+            } 
+
+            /*Container of each message's hour*/
+            /* .minimizable-web-chat > .chat-box >  */
+            #webchat li .content .row.message{
+                max-width: 100%;
+                margin: auto 0;
+            }
+
+            /*Container of image upload button*/
+            /* .minimizable-web-chat > .chat-box >  */
+            #webchat .css-1lzfo2b.css-15g3li9{
+                display: none;
+            }
+
+            .css-7xorrq.avatar{
+                display: none;
+            }
+
+            /*Span with hour of message*/
+            span.css-1phiexw{
+                display: none;
+            }
+
+            /* Suggest buttons */
+            .css-1lmr15n.css-1882x3w.css-1l9a57c .css-1wegtiu li .css-1apvbjj button{
+                border-radius: 15px;
+                color: white;
+                border-color: white;
+                background-color: #69a209;
+            }
+            .css-1lmr15n.css-1882x3w.css-1l9a57c .css-1wegtiu li .css-1apvbjj button:active{
+                color: #69a209;
+                border-color: #69a209;
+                background-color: white;
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <script src="js/webchat_BotFramework_4.2.1-0.js"></script>
+        <script src="http://104.211.22.215/host/ict/js/chat.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- <div id="animation-box"></div> -->
+    <!-- <div class="chat-box right"> -->
+        <!-- <header>
+            <div class="title">
+                <div class="title-username">
+                    <label>Mr. Sloth</label>
+                    <img src="img/Costa-Rica-Flag-icon.png">
+                </div>
+                <div class="title-online-status">
+                    <label>Online</label>
+                </div>
+            </div>
+            <div class="filler"></div>
+        </header> -->
+        <div id="webchat"></div>
+    <!-- </div> -->
+
+        <script>
+            renderWebChat();
+            displayAnimation();
+        </script>
+    </body>
+</html>
