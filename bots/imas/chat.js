@@ -12,7 +12,7 @@
         var script_tag = document.createElement('script');
         script_tag.setAttribute("type","text/javascript");
         script_tag.setAttribute("src",
-            "http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js");
+        "./jquery3-2-1.min.js");
         if (script_tag.readyState) {
           script_tag.onreadystatechange = function () { // For old versions of IE
               if (this.readyState == 'complete' || this.readyState == 'loaded') {
