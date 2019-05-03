@@ -96,9 +96,12 @@
                             <label style="text-align:left; font-size:60%;">En Línea</label>
                         </div>
                     </div>
-                    <!--                     <div class="minimize-chat">
-                    <img src="img/baseline_close_white_48dp.png"/>
-                    </div>-->
+                    <div class="minimize-chat">
+                        <img id="imagenMinimizar" style="width:25px; height:25px"; src="img/baseline_minimize_white_36dp.png"/>
+                    </div>      
+                    <div class="minimize-chat">
+                         <img id="imagenCerrar" style="width:25px; height:25px"; src="img/baseline_close_white_48dp.png"/>
+                    </div>
                 </header>
                 <div id="webchat"></div>
             </div>
