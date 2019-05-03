@@ -77,10 +77,9 @@
     }
 
     var gpTemplateHtml = `
-        <div class="minimizable-web-chat">
-            <button class="maximize">
-                 <img src="img/00-Avatar-Dipo.png" width="64px" height="64px" 
-                    style="border-radius: 20%; position: fixed; right: 20px; bottom: 20px;" />
+        <div class="minimizable-web-chat">            
+            <button class="maximize">                                 
+                    <span class="badge">1</span>
             </button>
             <div class="chat-box right">
                 <header>
@@ -90,7 +89,6 @@
                     </div>
                     <div class="title">
                         <b><label style="text-align:left;">Pocho</label></b>
-
                         <div class="status">
                             <div class="green_dot"></div>
                             <label style="text-align:left; font-size:60%;">En Línea</label>
