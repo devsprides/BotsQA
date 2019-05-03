@@ -46,8 +46,9 @@
             userId = generateUserId();
             user = { id: userId };
             directLineConn = window.WebChat.createDirectLine({ 
+                secret_qa: 'pMd2zxE-qYo.tdAy3LxTPcFZ5JAzghoIbow6Yk3kE-4PL7lx-VbneMU',
+                secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
                 secret: 'pMd2zxE-qYo.tdAy3LxTPcFZ5JAzghoIbow6Yk3kE-4PL7lx-VbneMU',
-                secret_0: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
                 user: user,
                 bot: { id: 'Bot' }
                 ,resize: 'detect'
@@ -75,8 +76,7 @@
     var gpTemplateHtml = `
         <div class="minimizable-web-chat">
             <button class="maximize">
-                <!-- <img src="img/chat.jpg" width="64px" height="64px" 
-                    style="border-radius: 50%; position: fixed; right: 20px; bottom: 20px;" /> -->
+                <div class="message-notification">1</div>
             </button>
             <div class="chat-box right">
                 <header>

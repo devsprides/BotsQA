@@ -18,11 +18,16 @@
     background-size: contain;
 }
 
-.minimizable-web-chat > button.maximize img {
-    border-radius: 50%; 
-    position: fixed; 
-    right: 20px; 
-    bottom: 20px;
+.minimizable-web-chat > button.maximize > .message-notification{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #FF692D;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 4px 7px;
+    border-radius: 50%;
 }
 
 .minimizable-web-chat > button.maximize:focus:not(:active),
@@ -207,7 +212,7 @@
 
 .minimizable-web-chat > .chat-box > #webchat 
 .markdown.css-o3xlyv{
-    background-color: #F1F8FE
+    background-color: #DDEEFA;
 }
 
 /* Input for entering messages */
