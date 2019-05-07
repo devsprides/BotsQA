@@ -83,17 +83,11 @@
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="webchat_4.3.0-es5.js"></script>
-        <script src="chat_imas.js"></script>
+        <script src="chat.js"></script>
     </head>
     <body>
         <div id="webchat"></div>
         <script>
-            var lastMinuteTimeout = 420*1000;
-            var globalTimeout = 480*1000;
-            var inactivityTimeout = 60*1000;
-            var inactivityTimeoutFirstMessage = 30*1000;
-            var inactivityTimeoutSecondMessage = 45*1000;
-
             console.log('Rendering webchat...');
             const styleSet = window.WebChat.createStyleSet({
                 bubbleBackground: 'rgba(66, 200, 244, .4)',
@@ -106,8 +100,9 @@
             var userId = generateUserId();
             const user = { id: userId };
             const directLineConn = window.WebChat.createDirectLine({ 
-                secret_0: '8myXMXqIKPg.cwA.HVQ.Nyo92f1ygSSABe6ON-6_i_85sIqwlOadgVqNj8Fi1t0',
-                secret: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
+                secret_qa: '-SXheYxOKgU.ikjUoBYardOol7CaJ9uV3rThStqPyEt2ZopfsBcQZYw',
+                secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
+                secret: '-SXheYxOKgU.ikjUoBYardOol7CaJ9uV3rThStqPyEt2ZopfsBcQZYw',
                 user: user,
                 bot: { id: 'Bot' }
                 ,resize: 'detect'
@@ -131,70 +126,8 @@
                 });
             }, 1000);
 
-            setChatTimeouts();
-
             function generateUserId(){
                 return Date.now().toString() + (Math.floor(Math.random() * 1000000) + 1).toString();
-            }
-
-            function setChatTimeouts(){
-                var globalTimeoutEnabled = true;
-                setTimeout(() => {
-                    if(globalTimeoutEnabled){
-                        addFakeMessageFromBot('Le recuerdo que esta sesión caducará en 1 minuto, le agradezco aprovechar al máximo este tiempo.');
-                    }
-                }, lastMinuteTimeout);
-
-                setTimeout(() => {
-                    if(globalTimeoutEnabled){
-                        addFakeMessageFromBot('El tiempo de atención ha finalizado, muchas gracias por utilizar el chat interactivo del Instituto Mixto de Ayuda Social (IMAS). Estamos para servirle.');
-                        jQuery('#webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc > input').attr('disabled', true);
-                        jQuery('#webchat button').attr('disabled', true);
-
-                        sendEventToBot('eventGlobalTimeout');
-                    }
-                }, globalTimeout);
-
-                // var count = 0;
-                // var allMessages = jQuery('.css-dhu3ty.css-7c9av6 > li').length;
-                // var messagesFromUser = jQuery('.css-dhu3ty.css-7c9av6 > li.from-user').length;
-                // console.log('all:' + allMessages + ' fromUser:' + messagesFromUser);
-                var inactivityTimeoutEnabled = true;
-                setTimeout(() => {
-                    var messages = jQuery('.css-dhu3ty.css-7c9av6 > li').length;
-                    console.log('messages:' + messages);
-
-                    if(messages == 4){
-                        addFakeMessageFromBot('¿Desea realizar una consulta?');
-                    } else{
-                        inactivityTimeoutEnabled = false;
-                    }
-                }, inactivityTimeoutFirstMessage);
-
-                setTimeout(() => {
-                    var messages = jQuery('.css-dhu3ty.css-7c9av6 > li').length;
-                    console.log('messages:' + messages);
-
-                    var message = '¿Se encuentra en línea?';
-                    if(messages == 5 && inactivityTimeoutEnabled){
-                        addFakeMessageFromBot(message);
-                    }
-                }, inactivityTimeoutSecondMessage);
-
-                setTimeout(() => {
-                    var messages = jQuery('.css-dhu3ty.css-7c9av6 > li').length;
-                    console.log('messages:' + messages);
-
-                    if(messages == 6 && inactivityTimeoutEnabled){
-                        globalTimeoutEnabled = false; //Disable global timeout, since the inactivity timeout occured
-                        addFakeMessageFromBot('Debido a falta de interacción con el usuario se procede a finalizar el chat.');
-                        addFakeMessageFromBot('Sus consultas son muy importante para nosotros, gracias por utilizar el chat interactivo del Instituto Mixto de Ayuda Social (IMAS). Estamos para servirle.');
-                        jQuery('#webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc > input').attr('disabled', true);
-                        jQuery('#webchat button').attr('disabled', true);
-
-                        sendEventToBot('eventInactivityTimeout');
-                    }
-                }, inactivityTimeout);
             }
 
             function addFakeMessageFromBot(message){
