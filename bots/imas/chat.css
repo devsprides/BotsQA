@@ -1,26 +1,29 @@
 
 .minimizable-web-chat > button.maximize {
-    background-color: #47afe7;
     border-radius: 50%;
-    border: 0px solid #47afe7;
-      
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    color: White;
+    bottom: 20px;
     cursor: pointer;
     font-size: 30px;
     font-family: "Open Sans";
-    height: 74px;
+    height: 64px;
     outline: 0;
     position: fixed;
     right: 20px;
     width: 64px;
+    text-decoration: none;
+    display: inline-block;
+    background: url("img/Icono-Chat.png");
+    background-size: contain;
+    border:none;
 }
 
 .minimizable-web-chat > button.maximize img {
-    border-radius: 50%; 
-    position: fixed; 
-    right: 20px; 
+     border-radius: 50%; 
+     right: 20px; 
      bottom: 20px;  
+     text-decoration: none;
+     display: inline-block;
+     position: relative;
 }
 
 .minimizable-web-chat > button.maximize:focus:not(:active),
@@ -227,6 +230,17 @@ b{
 .css-1lzfo2b{
     display: none;
 }
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: 3px;
+    padding: 5px 8px;
+    border-radius: 50%;
+    background:#FF5D00;
+    color: white;
+    font-size: 10px;
+  }
 
 .css-17vq3lb .css-bo8nme svg{
     fill: white;

@@ -1,11 +1,7 @@
 
 .minimizable-web-chat > button.maximize {
-    background-color: #47afe7;
-    border-radius: 50%;
-    border: 0px solid #47afe7;
+    border-radius: 20%;
     bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    color: White;
     cursor: pointer;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
@@ -15,13 +11,21 @@
     position: fixed;
     right: 20px;
     width: 64px;
+    text-decoration: none;
+    display: inline-block;
+    background: url("img/00-Avatar-Dipo.png");
+    background-size: contain;
+    border:none;
 }
 
 .minimizable-web-chat > button.maximize img {
     border-radius: 50%; 
-    position: fixed; 
     right: 20px; 
     bottom: 20px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+
 }
 
 .minimizable-web-chat > button.maximize:focus:not(:active),
@@ -272,6 +276,17 @@ li .content .row.message{
 #imagenMinimizar{
     margin-left: 40%;
 }
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 8px;
+    border-radius: 50%;
+    background:#ED1C24;
+    color: white;
+    font-size: 10px;
+  }
 
 .css-17vq3lb .css-bo8nme svg{
     fill: white;

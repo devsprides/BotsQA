@@ -77,16 +77,13 @@
     var gpTemplateHtml = `
         <div class="minimizable-web-chat">
             <button class="maximize">
-                 <img src="img/Icono-Chat.png" width="64px" height="64px" 
-                    style="border-radius: 20%; position: fixed; right: 20px; bottom: 20px;" />
+                <span class="badge">1</span>
             </button>
             <div class="chat-box right">
                 <header>
-
                     <div class="title">
                         <label><b>CHAT EN VIVO IMAS</b></label>
                     </div>
-
                     <div class="minimize-chat">
                         <img id="imagenMinimizar" style="width:25px; height:25px"; src="img/baseline_minimize_white_36dp.png"/>
                     </div>      
@@ -94,7 +91,6 @@
                          <img id="imagenCerrar" style="width:25px; height:25px"; src="img/baseline_close_white_48dp.png"/>
                     </div>              
                 </header>
- 
                 <div id="webchat"></div>
             </div>
         </div>
