@@ -255,6 +255,13 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
     color: #FF692D;
     border-color: #FF692D;
     border-bottom: none;
+    cursor: pointer;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container button.ac-pushButton:active{
+    background-color: #FF692D;
+    border-color: #FF692D;
+    color: white;
 }
 .minimizable-web-chat > .chat-box > #webchat 
 .ac-container>div>div>div> button.ac-pushButton:first-child{
@@ -270,6 +277,10 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
 .minimizable-web-chat > .chat-box > #webchat 
 .ac-container>div>div>div div{ /*divs between buttons*/
     display: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container>div>div{
+    border-radius: 10px;
 }
 
 .minimizable-web-chat > .chat-box > #webchat 
