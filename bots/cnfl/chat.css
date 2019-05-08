@@ -217,7 +217,7 @@
 
 /* Input for entering messages */
 .minimizable-web-chat > .chat-box > #webchat 
-form.css-1yaojre.css-1sjcwuh.css-1fe8kfc input{
+form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
     background-color: #EDF0F5;
 }
 
@@ -246,24 +246,24 @@ form.css-1yaojre.css-1sjcwuh.css-1fe8kfc input{
 
 /* List of buttons */
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container .ac-actionSet button{
+.ac-container button.ac-pushButton{
     color: #FF692D;
     border-color: #FF692D;
     border-bottom: none;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container .ac-actionSet button:first-child{
+.ac-container>div>div>div> button.ac-pushButton:first-child{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container .ac-actionSet button:last-child{
+.ac-container>div>div>div> button.ac-pushButton:last-child{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom: 1px solid;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container .ac-actionSet > div{
+.ac-container>div>div>div div{ /*divs between buttons*/
     display: none;
 }
 
@@ -301,25 +301,21 @@ li .content .row.message{
     margin: auto 0;
 }
 
-/*Container of image upload button*/
-.minimizable-web-chat > .chat-box > #webchat
-.css-1lzfo2b.css-15g3li9{
-    display: none;
-}
-
 .css-7xorrq.avatar{
     display: none;
 }
 
-button.css-17vq3lb .css-bo8nme{
+button.css-1yicgt3{
     background-color: #1E23E6;
     /* width: 40px; */
 }
 
-button.css-17vq3lb .css-bo8nme svg{
+button.css-1yicgt3 svg{
     fill: white;
 }
 
-.css-1lzfo2b.css-14x775w{
+/*Container of image upload button*/
+.minimizable-web-chat > .chat-box > #webchat
+.css-1lzfo2b.css-15g3li9{
     display: none;
 }

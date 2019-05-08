@@ -159,7 +159,7 @@
             })
             .subscribe(function(id){
                 console.log('"trigger requestWelcomeDialog" sent');
-                jQuery('.minimizable-web-chat > .chat-box > #webchat form.css-1yaojre.css-1sjcwuh.css-1fe8kfc input')
+                jQuery('.minimizable-web-chat > .chat-box > #webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc input')
                     .attr('placeholder', 'Responder a Sofi');
             });
         }, 1000);
