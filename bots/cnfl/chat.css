@@ -225,6 +225,7 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
 .minimizable-web-chat > .chat-box > #webchat 
 .css-ostbv8.bubble {
     border: none;
+    border-radius: 10px;
 }
 
 /* Bubbles with text from user */
@@ -232,9 +233,7 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
 .css-ostbv8.from-user.bubble {
     color: white;
     background-color: #FF692D;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 0;
 }
 
 /* Bubbles with buttons */
