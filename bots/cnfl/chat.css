@@ -243,6 +243,12 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
     border: none;
 }
 
+/* Bubble with image */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.attachment.bubble .ac-image > img {
+    border-radius: 10px;
+}
+
 /* List of buttons */
 .minimizable-web-chat > .chat-box > #webchat 
 .ac-container button.ac-pushButton{
