@@ -28,8 +28,8 @@
 
 .minimizable-web-chat > button.maximize:focus:not(:active),
 .minimizable-web-chat > button.maximize:hover:not(:active) {
-    background-color: #2a9df5;
-    border-color: #2a9df5;
+    /* background-color: #2a9df5;
+    border-color: #2a9df5; */
 }
 
 .minimizable-web-chat > button.maximize:active {
@@ -39,6 +39,10 @@
 
 .minimizable-web-chat > button.maximize.chat-button-hidden  {
     visibility: hidden;
+}
+
+.minimizable-web-chat > .chat-box * {
+    font-family: "Open Sans", sans-serif;
 }
 
 @media (min-width:551px){
@@ -57,13 +61,12 @@
         visibility: hidden;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
-
     }
 }
 
 @media (max-width:550px){
     .minimizable-web-chat > .chat-box {
-        background-color: rgba(232,242,254, 1);
+        /* background-color: "#DDEEFA"; */
         bottom: 0; 
         display: flex;
         flex-direction: column;
@@ -75,7 +78,6 @@
         visibility: hidden;
         border-top-left-radius: 4px;
         border-top-right-radius: 4px;
-        
     }
 }
 
@@ -168,8 +170,107 @@
 /*Container-2, inside Container-1, contains messages*/
 .minimizable-web-chat > .chat-box > #webchat 
 .css-gtdio3.css-mfy564 {
- 
-    background-color: rgba(232,242,254, 1);
+    background-color: #DDEEFA;
+}
+
+.minimizable-web-chat > .chat-box > #webchat 
+.markdown.css-o3xlyv{
+    /* background-color: #E4F3FD; */
+    background-color: white;
+}
+
+/* Input for entering messages */
+.minimizable-web-chat > .chat-box > #webchat 
+form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
+    background-color: #EDF0F5;
+}
+
+/* Bubbles with text from bot and user */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.bubble {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Bubbles with text from user */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.from-user.bubble {
+    color: white;
+    background-color: #0075AC;
+    border-bottom-right-radius: 0;
+}
+
+/* Bubbles with attachment */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.attachment.bubble {
+    background-color: transparent;
+    border: none;
+}
+
+/* Bubble with image */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.attachment.bubble .ac-image > img {
+    border-radius: 10px;
+}
+
+/* Bubble with carousel of cards */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
+.content ul li .css-ostbv8{
+    background-color: white;
+    border-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
+.content ul li .css-ostbv8 *{
+    color: rgb(0, 99, 177) !important;
+}
+
+/* Adaptive card */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-hgucfj.css-1wi3416 .row.attachment{
+    background-color: white;
+    border-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.css-hgucfj.css-1wi3416 .row.attachment{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Lis otf buttons */
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container button.ac-pushButton{
+    color: #0063b1;
+    border-color: #0063b1;
+    border-bottom: none;
+    cursor: pointer;
+}
+/* .minimizable-web-chat > .chat-box > #webchat 
+.ac-container button.ac-pushButton:active{
+    background-color: #0063b1;
+    border-color: #0063b1;
+    color: white;
+} */
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container>div>div>div> button.ac-pushButton:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container>div>div>div> button.ac-pushButton:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container>div>div>div div{ /*divs between buttons*/
+    display: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.ac-container>div>div{
+    border-radius: 10px;
 }
 
 .minimizable-web-chat > .chat-box > #webchat 

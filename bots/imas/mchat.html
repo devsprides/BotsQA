@@ -16,26 +16,100 @@
             #webchat, #webchat > * {
                 height: 100%;
                 width: 100%;
-                background: -moz-linear-gradient(45deg, #b5c5a0 0%, #a5bb7d 100%);
-                background: -webkit-linear-gradient(45deg, #b5c5a0 0%,#a5bb7d 100%);
-                background: linear-gradient(45deg, #b5c5a0 0%,#a5bb7d 100%);
+                background: -moz-linear-gradient(45deg, #DDEEFA 0%, #d6eaf8 100%);
+                background: -webkit-linear-gradient(45deg, #DDEEFA 0%,#d6eaf8 100%);
+                background: linear-gradient(45deg, #DDEEFA 0%,#d6eaf8 100%);
             }
-            /* #webchat .main, #webchat .main input{
+
+            /* Bubbles with text from bot and user */
+            #webchat .css-ostbv8.bubble {
+                border: none;
+                border-radius: 10px;
+            }
+
+            #webchat .markdown.css-o3xlyv{
+                /* background-color: #DDEEFA; */
+                background-color: white;
+            }
+            
+            /* Bubbles with text from user */
+            #webchat .css-ostbv8.from-user.bubble {
+                color: white;
+                background-color: #0075AC;
+                border-bottom-right-radius: 0;
+            }
+
+            /* Bubbles with buttons */
+            #webchat .css-ostbv8.attachment.bubble {
                 background-color: transparent;
+                border: none;
+            }
+
+            /* Bubble with image */
+            #webchat .css-ostbv8.attachment.bubble .ac-image > img {
+                border-radius: 10px;
+            }
+
+            /* Bubble with carousel of cards */
+            #webchat .css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
+            .content ul li .css-ostbv8{
+                background-color: white;
+                border-radius: 10px;
+            }
+            #webchat .css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
+            .content ul li .css-ostbv8 *{
+                color: rgb(0, 99, 177) !important;
+            }
+
+            /* Adaptive card */
+            #webchat .css-hgucfj.css-1wi3416 .row.attachment{
+                background-color: white;
+                border-radius: 10px;
+            }
+            #webchat .css-hgucfj.css-1wi3416 .row.attachment{
+                background-color: white;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+
+            /* Lis otf buttons */
+            #webchat .ac-container button.ac-pushButton{
+                color: #0063b1;
+                border-color: #0063b1;
+                border-bottom: none;
+                cursor: pointer;
+            }
+            /* #webchat .ac-container button.ac-pushButton:active{
+                background-color: #0063b1;
+                border-color: #0063b1;
                 color: white;
             } */
-            /* #webchat .main svg{
+            #webchat .ac-container>div>div>div> button.ac-pushButton:first-child{
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            #webchat .ac-container>div>div>div> button.ac-pushButton:last-child{
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: 1px solid;
+            }
+            #webchat .ac-container>div>div>div div{ /*divs between buttons*/
+                display: none;
+            }
+
+            /* Input for entering messages */
+            #webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
+                background-color: #EDF0F5;
+            }
+
+            #webchat button.css-1yicgt3{
+                background-color: #00BBE3;
+                /* width: 40px; */
+            }
+
+            #webchat button.css-1yicgt3 svg{
                 fill: white;
-            } */
-            /* #webchat .content .bubble{
-                background-color: white;
-            } */
-            /* #webchat .content .css-1phiexw, #webchat .content .css-vj6l7g{
-                color: rgba(255, 255, 255, 0.9);
-            } */
-            /* #webchat .main input::placeholder{
-                color: rgba(255, 255, 255, 0.5);
-            } */
+            }
 
             /*Container of each message*/
             /* .minimizable-web-chat > .chat-box >  */
@@ -102,7 +176,7 @@
             const directLineConn = window.WebChat.createDirectLine({ 
                 secret_qa: '8myXMXqIKPg.cwA.HVQ.Nyo92f1ygSSABe6ON-6_i_85sIqwlOadgVqNj8Fi1t0',
                 secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
-                secret: '8myXMXqIKPg.cwA.HVQ.Nyo92f1ygSSABe6ON-6_i_85sIqwlOadgVqNj8Fi1t0',
+                secret: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
                 user: user,
                 bot: { id: 'Bot' }
                 ,resize: 'detect'

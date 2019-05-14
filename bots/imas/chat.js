@@ -114,11 +114,11 @@
     function minimizeChatWindow() {
         // jQuery('#webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc > input').attr('disabled', true);
         // jQuery('#webchat button').attr('disabled', true);
-        // jQuery('.minimizable-web-chat div.chat-box').removeClass('chat-visible');
-        // jQuery('.minimizable-web-chat button.maximize').removeClass('chat-button-hidden');
+        jQuery('.minimizable-web-chat div.chat-box').removeClass('chat-visible');
+        jQuery('.minimizable-web-chat button.maximize').removeClass('chat-button-hidden');
         // chatClosed = true;
 
-        location.reload();
+        // location.reload();
     }
     
     function renderWebChat(){
