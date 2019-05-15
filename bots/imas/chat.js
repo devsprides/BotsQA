@@ -6,6 +6,7 @@
     var userId;
     var user;
     var chatClosed = false;
+ 
     
     /******** Load jQuery if not present *********/
     if (window.jQuery === undefined || window.jQuery.fn.jquery !== '3.2.1') {
@@ -139,6 +140,8 @@
             userAvatarInitials: 'User',
             styleSet
         }, document.getElementById('webchat'));
+
+        displayAnimation();
     
         setTimeout(function(){
             directLineConn.postActivity({
@@ -252,5 +255,33 @@
         //jQuery("#webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc > input").attr("placeholder", "age");
         $('#gp_webchat .minimizable-web-chat > .chat-box > #webchat form.css-1yaojre css-1sjcwuh.css-1fe8kfc input').attr('placeholder', 'Responder a Sofi');
     }
+
+    function displayAnimation(){
+        
+            jQuery('.css-dhu3ty.css-7c9av6')
+                .append(jQuery('<li id="animation-item" class="css-1qyo5rb">'
+                            + '<div class="css-hgucfj css-1wi3416">'    //1
+                                + '<div class="css-7xorrq avatar">Bot</div>' 
+                                + '<div class="content">' //2
+                                    + '<div class="row message">' //3
+                                        + '<div class="css-ostbv8 bubble">' //4
+                                            + '<div class="markdown css-o3xlyv"><p>' //5
+                                                + '<img src="https://gpbot.blob.core.windows.net/gpbot/imas/Saludo.png" class="animation-image" />'
+                                            + '</p></div>' //5
+                                        + '</div>' //4
+                                        + '<div class="filler"></div>' 
+                                    + '</div>' //3
+                                    + '<div class="row">' 
+                                        + '<span class="css-1phiexw">'
+                                        // + 'Just now'
+                                        + '</span>' 
+                                        + '<div class="filler"></div>' 
+                                    + '</div>' 
+                                + '</div>' //2
+                                + '<div class="filler"></div>' 
+                            + '</div>' //1
+                        + '</li>').hide().fadeIn(2000));
+    }
+    
     
     })();
