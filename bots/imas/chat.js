@@ -83,14 +83,23 @@
             <div class="chat-box right">
                 <header>
                     <div class="title">
-                        <label><b>CHAT EN VIVO IMAS</b></label>
+                        <div class="picture"></div>
+                        <div class="text">
+                            <div class="name">Bety de IMAS</div>
+                            <div class="status">
+                                <div class="green_dot"></div>
+                                <label>En Línea</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="minimize-chat">
-                        <img id="imagenMinimizar" style="width:25px; height:25px"; src="img/baseline_minimize_white_36dp.png"/>
-                    </div>      
-                    <div class="minimize-chat">
-                         <img id="imagenCerrar" style="width:25px; height:25px"; src="img/baseline_close_white_48dp.png"/>
-                    </div>              
+                    <div class="close-buttons">
+                        <div class="minimize-chat">
+                            <img src="img/baseline_minimize_white_36dp.png"/>
+                        </div>      
+                        <div class="close-chat">
+                            <img src="img/baseline_close_white_48dp.png"/>
+                        </div>
+                    </div>
                 </header>
                 <div id="webchat"></div>
             </div>
@@ -264,8 +273,8 @@
                                 + '<div class="css-7xorrq avatar">Bot</div>' 
                                 + '<div class="content">' //2
                                     + '<div class="row message">' //3
-                                        + '<div class="css-ostbv8 bubble">' //4
-                                            + '<div class="markdown css-o3xlyv"><p>' //5
+                                        + '<div class="css-ostbv8 attachment bubble">' //4
+                                            + '<div class="markdown css-o3xlyv ac-image"><p>' //5
                                                 + '<img src="https://gpbot.blob.core.windows.net/gpbot/imas/Saludo.png" class="animation-image" />'
                                             + '</p></div>' //5
                                         + '</div>' //4

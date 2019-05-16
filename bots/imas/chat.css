@@ -43,6 +43,7 @@
 
 .minimizable-web-chat > .chat-box * {
     font-family: "Open Sans", sans-serif;
+    font-size: 14px;
 }
 
 @media (min-width:551px){
@@ -95,12 +96,11 @@
 
 .minimizable-web-chat > .chat-box header {
     background-color: #FF5D00;
-    height: 9%;
+    height: 8%;
     min-height: 50px;
     display: flex;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    text-align: center;
 }
 
 
@@ -108,8 +108,28 @@
     margin: auto 20px;
     color: white;
     display: flex;
-    flex-direction: column;
-    width: 80%;
+    flex-direction: row;
+    width: 90%;
+}
+
+.minimizable-web-chat > .chat-box header .title .picture{
+    width: 32px;
+    height: 32px;
+    background: url('./img/Icono-Chat-Azul.png');
+    background-size: contain;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.minimizable-web-chat > .chat-box header .title .text{
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.minimizable-web-chat > .chat-box header .title .name{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-bottom: -3px;
 }
 
 .minimizable-web-chat > .chat-box header .title .status .green_dot {
@@ -120,37 +140,35 @@
     display: inline-block;
 }
 
-.minimizable-web-chat > .chat-box header .title label {
-    text-align: center;
-    max-height: 20px;
-    font-size: 13px;
-    font-family: "Open Sans", sans-serif;
-
+.minimizable-web-chat > .chat-box header .title .status label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
 }
 
-.minimizable-web-chat > .chat-box > header > .minimize-chat {
-    width: 10%;
-    margin-right: 10px;
-    height: 60%;
-    margin-top: auto;
-    margin-bottom: auto;
+.minimizable-web-chat > .chat-box > header > .close-buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
 }
 
-.minimizable-web-chat > .chat-box > header > .minimize-chat > img {
-    width: 30px;
-    height: 100%;
+.minimizable-web-chat > .chat-box > header > .close-buttons > .minimize-chat > img {
+    width: 22px;
+    height: 20px;
     cursor: pointer;
+}
 
-    position: relative;
-    padding-bottom: 5px;
+.minimizable-web-chat > .chat-box > header > .close-buttons > .close-chat > img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .minimizable-web-chat > .chat-box > #webchat {
     flex: 1;
     display: flex;
-   
     width: 100%;
-    max-height: 91%;
+    max-height: 92%;
     width: 100%;
 
     box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
@@ -170,12 +188,6 @@
 /*Container-2, inside Container-1, contains messages*/
 .minimizable-web-chat > .chat-box > #webchat 
 .css-gtdio3.css-mfy564 {
-    background-color: #DDEEFA;
-}
-
-.minimizable-web-chat > .chat-box > #webchat 
-.markdown.css-o3xlyv{
-    /* background-color: #E4F3FD; */
     background-color: white;
 }
 
@@ -185,11 +197,17 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
     background-color: #EDF0F5;
 }
 
+.minimizable-web-chat > .chat-box > #webchat 
+.markdown.css-o3xlyv{
+    /* background-color: rgba(236,236,236, 1); */
+}
+
 /* Bubbles with text from bot and user */
 .minimizable-web-chat > .chat-box > #webchat 
 .css-ostbv8.bubble {
     border: none;
     border-radius: 10px;
+    background-color: rgba(236,236,236, 1);
 }
 
 /* Bubbles with text from user */
@@ -209,7 +227,11 @@ form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
 
 /* Bubble with image */
 .minimizable-web-chat > .chat-box > #webchat 
-.css-ostbv8.attachment.bubble .ac-image > img {
+.css-ostbv8.attachment.bubble .ac-image {
+    background-color: transparent;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.css-ostbv8.attachment.bubble .ac-image img {
     border-radius: 10px;
 }
 
@@ -319,10 +341,6 @@ li .content .row.message{
     background-color:#00BBE3;
 }
 
-#imagenMinimizar{
-    margin-left: 17px;
-}
-
 b{
     margin-left: 40px;
 }
@@ -343,6 +361,9 @@ b{
     font-size: 10px;
   }
 
-.css-17vq3lb .css-bo8nme svg{
+button.css-1yicgt3{
+    background-color: #0075AC;
+}
+button.css-1yicgt3 svg{
     fill: white;
 }​
