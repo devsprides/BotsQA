@@ -186,8 +186,10 @@
             });
             window.WebChat.renderWebChat({
                 directLine: directLineConn,
+                userID: user.id,
                 botAvatarInitials: 'Bot',
                 userAvatarInitials: 'User',
+                locale: 'es-CR',
                 styleSet
             }, document.getElementById('webchat'));
 

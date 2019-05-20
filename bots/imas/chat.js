@@ -68,8 +68,10 @@
 
             var maximizeChatButton = jQuery('.minimizable-web-chat button.maximize');
             var minimizeChatButton = jQuery('.minimizable-web-chat .chat-box div.minimize-chat img');
+            var closeChatButton = jQuery('.minimizable-web-chat .chat-box div.close-chat img');
             maximizeChatButton.click(openChatWindow);
             minimizeChatButton.click(minimizeChatWindow);
+            closeChatButton.click(closeChatWindow);
 
             
         });
@@ -130,6 +132,10 @@
 
         // location.reload();
     }
+
+    function closeChatWindow() {
+        location.reload();
+    }
     
     function renderWebChat(){
         console.log('Rendering webchat...');
@@ -147,6 +153,7 @@
             userID: user.id,
             botAvatarInitials: 'Bot',
             userAvatarInitials: 'User',
+            locale: 'es-CR',
             styleSet
         }, document.getElementById('webchat'));
 
