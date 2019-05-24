@@ -26,117 +26,125 @@
                 font-size: 14px;
             }
 
-            /* Bubbles with text from bot and user */
-            #webchat .css-ostbv8.bubble {
-                border: none;
+            /* Bubbles with text and attachment content */
+            #webchat 
+            .content .css-cekmep.bubble{
+                background-color: rgba(236,236,236, 1); /* #ECECEC */
                 border-radius: 10px;
-                background-color: rgba(236,236,236, 1);
+                border-bottom-left-radius: 0;
             }
-            #webchat .markdown.css-o3xlyv{
-                /* background-color: #DDEEFA; */
-            }
-            
-            /* Bubbles with text from user */
-            #webchat .css-ostbv8.from-user.bubble {
+            #webchat 
+            .content .css-cekmep.bubble.from-user{
+                background-color: rgba(0, 117, 172, 1); /* #0075AC */
                 color: white;
-                background-color: #0075AC;
                 border-bottom-right-radius: 0;
+                border-bottom-left-radius: 10px;
             }
 
-            /* Bubbles with buttons */
-            #webchat .css-ostbv8.attachment.bubble {
-                background-color: transparent;
-                border: none;
-            }
-
-            /* Bubble with image */
-            #webchat .css-ostbv8.attachment.bubble .ac-image {
-                background-color: transparent;
-            }
-            #webchat .css-ostbv8.attachment.bubble .ac-image img {
+            /* Bubbles with card attachment content, like column of buttons or adaptive card */
+            #webchat 
+            .content .css-cekmep.attachment.bubble{
                 border-radius: 10px;
             }
-
-            /* Bubble with carousel of cards */
-            #webchat .css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
-            .content ul li .css-ostbv8{
-                background-color: white;
-                border-radius: 10px;
-            }
-            #webchat .css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
-            .content ul li .css-ostbv8 *{
-                color: rgb(0, 99, 177) !important;
-            }
-
-            /* Adaptive card */
-            #webchat .css-hgucfj.css-1wi3416 .row.attachment{
-                background-color: rgba(236,236,236, 1);
-                border-radius: 10px;
-                margin-top: 10px;
-            }
-
-            /* Lis otf buttons */
-            #webchat .ac-container button.ac-pushButton{
-                color: #0063b1;
-                border-color: #0063b1;
-                border-bottom: none;
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton{
+                color: #0075AC;
+                border-color: #0075AC;
                 cursor: pointer;
+                border-bottom: none;
+                outline: none;
             }
-            /* #webchat .ac-container button.ac-pushButton:active{
-                background-color: #0063b1;
-                border-color: #0063b1;
-                color: white;
-            } */
-            #webchat .ac-container>div>div>div> button.ac-pushButton:first-child{
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:first-child{
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
             }
-            #webchat .ac-container>div>div>div> button.ac-pushButton:last-child{
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:last-child{
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;
                 border-bottom: 1px solid;
             }
-            #webchat .ac-container>div>div>div div{ /*divs between buttons*/
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:active{
+                background-color: #0075AC;
+                color: white;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet > div{
                 display: none;
             }
 
-            /* Input for entering messages */
-            #webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
+            /* Bubbles in carousel of cards */
+            #webchat 
+            .content ul li .css-cekmep{
+                background-color: rgba(236,236,236, 1); /* #ECECEC */
+                border-radius: 10px;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton{
+                color: #0075AC;
+                border-color: #0075AC;
+                cursor: pointer;
+                border-bottom: none;
+                outline: none;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton:first-child{
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton:last-child{
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: 1px solid;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton:active{
+                background-color: #0075AC;
+                color: white;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet > div{
+                display: none;
+            }
+
+            /* Bubble with predefined welcome image */
+            #webchat 
+            .content #welcome-image.css-cekmep.attachment.bubble{
+                border-radius: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            #webchat 
+            .content #welcome-image.css-cekmep.attachment.bubble img{
+                border-radius: 10px;
+            }
+
+            /* Form and with input for entering messages */
+            #webchat 
+            form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc,
+            #webchat 
+            form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input{
                 background-color: #EDF0F5;
             }
 
-            #webchat button.css-1yicgt3{
+            /* Upload file button */
+            #webchat 
+            .css-1lzfo2b.css-14x775w{
+                display: none;
+            }
+
+            /* Button for sending messages */
+            #webchat 
+            button.css-115fwte{
                 background-color: #0075AC;
-                /* width: 40px; */
             }
-
-            #webchat button.css-1yicgt3 svg{
-                fill: white;
-            }
-
-            /*Container of each message*/
-            /* .minimizable-web-chat > .chat-box >  */
-            #webchat li .content .row{
-                max-width: 100%;
-                margin: auto 0;
-            } 
-
-            /*Container of each message's hour*/
-            /* .minimizable-web-chat > .chat-box >  */
-            #webchat li .content .row.message{
-                max-width: 100%;
-                margin: auto 0;
-            }
-
-            /*Container of image upload button*/
-            /* .minimizable-web-chat > .chat-box >  */
-            #webchat .css-1lzfo2b.css-15g3li9{
-                display: none;
-            }
-
-            .css-7xorrq.avatar{
-                display: none;
-            }
+            #webchat 
+            button.css-115fwte svg{
+                fill: #FFFFFF;
+            }​
 
             input[type="color"],
 			input[type="date"],
@@ -159,7 +167,7 @@
 			}
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="./webchat_4.2.0-es5.js"></script>
+        <script src="./webchat_4.4.1-es5.js"></script>
         <script src="./chat.js"></script>
     </head>
     <body>
@@ -241,30 +249,32 @@
             }
 
             function displayAnimation(){
-        
-                jQuery('.css-dhu3ty.css-7c9av6')
-                .append(jQuery('<li id="animation-item" class="css-1qyo5rb">'
-                            + '<div class="css-hgucfj css-1wi3416">'    //1
-                                + '<div class="css-7xorrq avatar">Bot</div>' 
-                                + '<div class="content">' //2
-                                    + '<div class="row message">' //3
-                                        + '<div class="css-ostbv8 attachment bubble">' //4
-                                            + '<div class="markdown css-o3xlyv ac-image"><p>' //5
-                                                + '<img src="https://gpbot.blob.core.windows.net/gpbot/imas/Saludo.png" class="animation-image" />'
-                                            + '</p></div>' //5
-                                        + '</div>' //4
-                                        + '<div class="filler"></div>' 
-                                    + '</div>' //3
-                                    + '<div class="row">' 
-                                        + '<span class="css-1phiexw">'
-                                        // + 'Just now'
-                                        + '</span>' 
-                                        + '<div class="filler"></div>' 
-                                    + '</div>' 
-                                + '</div>' //2
-                                + '<div class="filler"></div>' 
-                            + '</div>' //1
-                        + '</li>').hide().fadeIn(2000));
+                jQuery('.css-ljhy6a.css-7c9av6')
+                    .append(jQuery(
+                        '	<li class="css-1qyo5rb hide-timestamp" role="listitem">'
+                        +'		<div class="css-tyxksf css-2p02md">'
+                        +'			<div class="content">'
+                        +'				<div class="webchat__row attachment">'
+                        +'					<div id="welcome-image" class="css-cekmep attachment bubble">'
+                        +'						<div class="css-1vieo9r">'
+                        +'							<div class="ac-container" tabindex="0" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto; padding: 15px;">'
+                        +'								<div class="ac-container" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                        +'									<div style="display: flex; align-items: flex-start; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                        +'										<img class="ac-image" src="https://gpbot.blob.core.windows.net/gpbot/imas/Saludo.png" alt="" style="max-height: 100%; min-width: 0px; width: 100%;">'
+                        +'									</div>'
+                        +'								</div>'
+                        +'							</div>'
+                        +'						</div>'
+                        +'					</div>'
+                        +'				</div>'
+                        +'				<div aria-hidden="true" class="webchat__row"><span class="css-1s8geyi timestamp transcript-timestamp">Hace 6 minutos</span>'
+                        +'					<div class="filler"></div>'
+                        +'				</div>'
+                        +'			</div>'
+                        +'			<div class="filler"></div>'
+                        +'		</div>'
+                        +'	</li>'
+                    ).hide().fadeIn(2000));
             }
         </script>
     </body>

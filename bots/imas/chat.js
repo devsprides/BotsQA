@@ -77,36 +77,35 @@
         });
     }
 
-    var gpTemplateHtml = `
-        <div class="minimizable-web-chat">
-            <button class="maximize">
-                <span class="badge">1</span>
-            </button>
-            <div class="chat-box right">
-                <header>
-                    <div class="title">
-                        <div class="picture"></div>
-                        <div class="text">
-                            <div class="name">Bety de IMAS</div>
-                            <div class="status">
-                                <div class="green_dot"></div>
-                                <label>En Línea</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="close-buttons">
-                        <div class="minimize-chat">
-                            <img src="img/baseline_minimize_white_36dp.png"/>
-                        </div>      
-                        <div class="close-chat">
-                            <img src="img/baseline_close_white_48dp.png"/>
-                        </div>
-                    </div>
-                </header>
-                <div id="webchat"></div>
-            </div>
-        </div>
-    `;
+    var gpTemplateHtml = 
+        '<div class="minimizable-web-chat">'
+        + '<button class="maximize">'
+            + '<span class="badge">1</span>'
+        + '</button>'
+        + '<div class="chat-box right">'
+            + '<header>'
+                + '<div class="title">'
+                    + '<div class="picture"></div>'
+                    + '<div class="text">'
+                        + '<div class="name">Bety de IMAS</div>'
+                        + '<div class="status">'
+                            + '<div class="green_dot"></div>'
+                            + '<label>En Línea</label>'
+                        + '</div>'
+                    + '</div>'
+                + '</div>'
+                + '<div class="close-buttons">'
+                    + '<div class="minimize-chat">'
+                        + '<img src="img/baseline_minimize_white_36dp.png"/>'
+                    + '</div>'
+                    + '<div class="close-chat">'
+                        + '<img src="img/baseline_close_white_48dp.png"/>'
+                    + '</div>'
+                + '</div>'
+            + '</header>'
+            + '<div id="webchat"></div>'
+        + '</div>'
+    + '</div>';
 
     function openChatWindow() {
         if(window.innerWidth < 750){
@@ -153,8 +152,8 @@
             userID: user.id,
             botAvatarInitials: 'Bot',
             userAvatarInitials: 'User',
-            locale: 'es-CR',
-            styleSet
+            locale: 'es-ES',
+            styleSet: styleSet
         }, document.getElementById('webchat'));
 
         displayAnimation();
@@ -272,32 +271,34 @@
         $('#gp_webchat .minimizable-web-chat > .chat-box > #webchat form.css-1yaojre css-1sjcwuh.css-1fe8kfc input').attr('placeholder', 'Responder a Sofi');
     }
 
+    //For webchat v4.4.1
     function displayAnimation(){
-        
-            jQuery('.css-dhu3ty.css-7c9av6')
-                .append(jQuery('<li id="animation-item" class="css-1qyo5rb">'
-                            + '<div class="css-hgucfj css-1wi3416">'    //1
-                                + '<div class="css-7xorrq avatar">Bot</div>' 
-                                + '<div class="content">' //2
-                                    + '<div class="row message">' //3
-                                        + '<div class="css-ostbv8 attachment bubble">' //4
-                                            + '<div class="markdown css-o3xlyv ac-image"><p>' //5
-                                                + '<img src="https://gpbot.blob.core.windows.net/gpbot/imas/Saludo.png" class="animation-image" />'
-                                            + '</p></div>' //5
-                                        + '</div>' //4
-                                        + '<div class="filler"></div>' 
-                                    + '</div>' //3
-                                    + '<div class="row">' 
-                                        + '<span class="css-1phiexw">'
-                                        // + 'Just now'
-                                        + '</span>' 
-                                        + '<div class="filler"></div>' 
-                                    + '</div>' 
-                                + '</div>' //2
-                                + '<div class="filler"></div>' 
-                            + '</div>' //1
-                        + '</li>').hide().fadeIn(2000));
+        jQuery('.css-ljhy6a.css-7c9av6')
+            .append(jQuery(
+                '	<li class="css-1qyo5rb hide-timestamp" role="listitem">'
+                +'		<div class="css-tyxksf css-2p02md">'
+                +'			<div class="content">'
+                +'				<div class="webchat__row attachment">'
+                +'					<div id="welcome-image" class="css-cekmep attachment bubble">'
+                +'						<div class="css-1vieo9r">'
+                +'							<div class="ac-container" tabindex="0" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto; padding: 15px;">'
+                +'								<div class="ac-container" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                +'									<div style="display: flex; align-items: flex-start; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                +'										<img class="ac-image" src="https://gpbot.blob.core.windows.net/gpbot/imas/Saludo.png" alt="" style="max-height: 100%; min-width: 0px; width: 100%;">'
+                +'									</div>'
+                +'								</div>'
+                +'							</div>'
+                +'						</div>'
+                +'					</div>'
+                +'				</div>'
+                +'				<div aria-hidden="true" class="webchat__row"><span class="css-1s8geyi timestamp transcript-timestamp">Hace 6 minutos</span>'
+                +'					<div class="filler"></div>'
+                +'				</div>'
+                +'			</div>'
+                +'			<div class="filler"></div>'
+                +'		</div>'
+                +'	</li>'
+            ).hide().fadeIn(2000));
     }
-    
     
     })();

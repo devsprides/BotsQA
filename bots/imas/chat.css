@@ -26,19 +26,23 @@
      position: relative;
 }
 
-.minimizable-web-chat > button.maximize:focus:not(:active),
-.minimizable-web-chat > button.maximize:hover:not(:active) {
-    /* background-color: #2a9df5;
-    border-color: #2a9df5; */
-}
-
 .minimizable-web-chat > button.maximize:active {
     background-color: White;
-    color: #47afe7;
 }
 
 .minimizable-web-chat > button.maximize.chat-button-hidden  {
     visibility: hidden;
+}
+
+.minimizable-web-chat > button.maximize .badge {
+    position: absolute;
+    top: -4px;
+    right: 3px;
+    padding: 5px 8px;
+    border-radius: 50%;
+    background:#FF5D00;
+    color: white;
+    font-size: 10px;
 }
 
 .minimizable-web-chat > .chat-box * {
@@ -46,52 +50,27 @@
     font-size: 14px;
 }
 
-@media (min-width:551px){
-    .minimizable-web-chat > .chat-box {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0);
-        bottom: 0; 
-        display: flex;
-        flex-direction: column;
-        max-width: 380px;
-        min-width: 320px;
-        position: fixed;
-        top: 100px;
-        z-index: 3;
-        min-height: 300px;
-        width: 20%;
-        visibility: hidden;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-    }
-}
-
-@media (max-width:550px){
-    .minimizable-web-chat > .chat-box {
-        /* background-color: "#DDEEFA"; */
-        bottom: 0; 
-        display: flex;
-        flex-direction: column;
-        max-width: 500px;
-        min-width: 400px;
-        position: fixed;
-        top: 20px;
-        width: 30%;
-        visibility: hidden;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-    }
+.minimizable-web-chat > .chat-box {
+    position: fixed;
+    bottom: 0;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    max-width: 380px;
+    min-width: 320px;        
+    min-height: 300px;
+    z-index: 3;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    visibility: hidden;
 }
 
 .minimizable-web-chat > .chat-box.chat-visible {
     visibility: visible;
-    border-radius: 4px;
-    border-radius: 4px;
 }
 
 .minimizable-web-chat > .chat-box.right {
     right: 20px;
-    border-radius: 4px;
-    border-radius: 4px;
 }
 
 .minimizable-web-chat > .chat-box header {
@@ -102,7 +81,6 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
-
 
 .minimizable-web-chat > .chat-box header .title {
     margin: auto 20px;
@@ -138,6 +116,8 @@
     background-color: #00FF13;
     border-radius: 50%;
     display: inline-block;
+    margin-top: 4px;
+    margin-right: 4px;
 }
 
 .minimizable-web-chat > .chat-box header .title .status label{
@@ -167,198 +147,128 @@
 .minimizable-web-chat > .chat-box > #webchat {
     flex: 1;
     display: flex;
-    width: 100%;
-    max-height: 92%;
+    max-height: 92%; /* The rest is for the .chat-box>header */
     width: 100%;
 
     box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
 }
 
-/*Container-1, inside #webchat*/
+/* Bubbles with text and attachment content */
 .minimizable-web-chat > .chat-box > #webchat 
-.css-1t62idy.css-cwp94z{
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
-    width: 100%;
-
-
-}
-
-/*Container-2, inside Container-1, contains messages*/
-.minimizable-web-chat > .chat-box > #webchat 
-.css-gtdio3.css-mfy564 {
-    background-color: white;
-}
-
-/* Input for entering messages */
-.minimizable-web-chat > .chat-box > #webchat 
-form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
-    background-color: #EDF0F5;
-}
-
-.minimizable-web-chat > .chat-box > #webchat 
-.markdown.css-o3xlyv{
-    /* background-color: rgba(236,236,236, 1); */
-}
-
-/* Bubbles with text from bot and user */
-.minimizable-web-chat > .chat-box > #webchat 
-.css-ostbv8.bubble {
-    border: none;
+.content .css-cekmep.bubble{
+    background-color: rgba(236,236,236, 1); /* #ECECEC */
     border-radius: 10px;
-    background-color: rgba(236,236,236, 1);
+    border-bottom-left-radius: 0;
 }
-
-/* Bubbles with text from user */
 .minimizable-web-chat > .chat-box > #webchat 
-.css-ostbv8.from-user.bubble {
+.content .css-cekmep.bubble.from-user{
+    background-color: rgba(0, 117, 172, 1); /* #0075AC */
     color: white;
-    background-color: #0075AC;
     border-bottom-right-radius: 0;
+    border-bottom-left-radius: 10px;
 }
 
-/* Bubbles with attachment */
+/* Bubbles with card attachment content, like column of buttons or adaptive card */
 .minimizable-web-chat > .chat-box > #webchat 
-.css-ostbv8.attachment.bubble {
-    background-color: transparent;
-    border: none;
-}
-
-/* Bubble with image */
-.minimizable-web-chat > .chat-box > #webchat 
-.css-ostbv8.attachment.bubble .ac-image {
-    background-color: transparent;
-}
-.minimizable-web-chat > .chat-box > #webchat 
-.css-ostbv8.attachment.bubble .ac-image img {
-    border-radius: 10px;
-}
-
-/* Bubble with carousel of cards */
-.minimizable-web-chat > .chat-box > #webchat 
-.css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
-.content ul li .css-ostbv8{
-    background-color: white;
+.content .css-cekmep.attachment.bubble{
     border-radius: 10px;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.css-1qyo5rb .css-gtdio3.css-1rat9fo .css-ks86yf.css-qhdgqx 
-.content ul li .css-ostbv8 *{
-    color: rgb(0, 99, 177) !important;
-}
-
-/* Adaptive card */
-.minimizable-web-chat > .chat-box > #webchat 
-.css-hgucfj.css-1wi3416 .row.attachment{
-    background-color: rgba(236,236,236, 1);
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-/* Lis otf buttons */
-.minimizable-web-chat > .chat-box > #webchat 
-.ac-container button.ac-pushButton{
-    color: #0063b1;
-    border-color: #0063b1;
-    border-bottom: none;
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton{
+    color: #0075AC;
+    border-color: #0075AC;
     cursor: pointer;
+    border-bottom: none;
+    outline: none;
 }
-/* .minimizable-web-chat > .chat-box > #webchat 
-.ac-container button.ac-pushButton:active{
-    background-color: #0063b1;
-    border-color: #0063b1;
-    color: white;
-} */
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container>div>div>div> button.ac-pushButton:first-child{
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:first-child{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container>div>div>div> button.ac-pushButton:last-child{
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:last-child{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom: 1px solid;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container>div>div>div div{ /*divs between buttons*/
-    display: none;
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:active{
+    background-color: #0075AC;
+    color: white;
 }
 .minimizable-web-chat > .chat-box > #webchat 
-.ac-container>div>div{
+.content .css-cekmep.attachment.bubble .ac-actionSet > div{
+    display: none;
+}
+
+/* Bubbles in carousel of cards */
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep{
+    background-color: rgba(236,236,236, 1); /* #ECECEC */
+    border-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton{
+    color: #0075AC;
+    border-color: #0075AC;
+    cursor: pointer;
+    border-bottom: none;
+    outline: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton:active{
+    background-color: #0075AC;
+    color: white;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet > div{
+    display: none;
+}
+
+/* Bubble with predefined welcome image */
+.minimizable-web-chat > .chat-box > #webchat 
+.content #welcome-image.css-cekmep.attachment.bubble{
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content #welcome-image.css-cekmep.attachment.bubble img{
     border-radius: 10px;
 }
 
+/* Form and with input for entering messages */
 .minimizable-web-chat > .chat-box > #webchat 
-.css-gtdio3.css-mfy564 #animation-item .css-ostbv8.bubble {
-    width: 100% !important;
-
+form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc,
+.minimizable-web-chat > .chat-box > #webchat 
+form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input{
+    background-color: #EDF0F5;
 }
 
-/*Container-3, inside Container-1, input for entering messages*/
+/* Upload file button */
 .minimizable-web-chat > .chat-box > #webchat 
-.css-1lmr15n.css-1882x3w.css-1l9a57c{
-    
-}
-
-/*Floating button with text "New messages"*/
-.minimizable-web-chat > .chat-box > #webchat 
-.css-1r0h5kb {
-    
-}
-
-/*Container of each message*/
-.minimizable-web-chat > .chat-box > #webchat 
-li .content .row{
-    max-width: 100%;
-    margin: auto 0;
-} 
-
-/*Container of each message's hour*/
-.minimizable-web-chat > .chat-box > #webchat 
-li .content .row.message{
-    max-width: 100%;
-    margin: auto 0;
-}
-
-/*Container of image upload button*/
-.minimizable-web-chat > .chat-box > #webchat
-.css-1lzfo2b.css-15g3li9{
+.css-1lzfo2b.css-14x775w{
     display: none;
 }
 
-.css-7xorrq.avatar{
-    display: none;
-}
-
-.css-17vq3lb{
-    background-color:#00BBE3;
-}
-
-b{
-    margin-left: 40px;
-}
-
-
-.css-1lzfo2b{
-    display: none;
-}
-
-.badge {
-    position: absolute;
-    top: -4px;
-    right: 3px;
-    padding: 5px 8px;
-    border-radius: 50%;
-    background:#FF5D00;
-    color: white;
-    font-size: 10px;
-  }
-
-button.css-1yicgt3{
+/* Button for sending messages */
+.minimizable-web-chat > .chat-box > #webchat 
+button.css-115fwte{
     background-color: #0075AC;
 }
-button.css-1yicgt3 svg{
-    fill: white;
+.minimizable-web-chat > .chat-box > #webchat 
+button.css-115fwte svg{
+    fill: #FFFFFF;
 }​
