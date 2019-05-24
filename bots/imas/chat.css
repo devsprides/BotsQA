@@ -153,6 +153,17 @@
     box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
 }
 
+/*IE fix problem of big white space after content*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .minimizable-web-chat > .chat-box > #webchat
+    .css-1t62idy.css-990gl9 .css-gtdio3.css-mfy564 .css-y1c0xs.css-ca0rlf
+    ul.css-ljhy6a.css-7c9av6
+    {
+        height: 100%;
+    }
+}
+
+
 /* Bubbles with text and attachment content */
 .minimizable-web-chat > .chat-box > #webchat 
 .content .css-cekmep.bubble{
