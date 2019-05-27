@@ -19,99 +19,99 @@
                 /* background: -moz-linear-gradient(45deg, #b5c5a0 0%, #a5bb7d 100%);
                 background: -webkit-linear-gradient(45deg, #b5c5a0 0%,#a5bb7d 100%);
                 background: linear-gradient(45deg, #b5c5a0 0%,#a5bb7d 100%); */
+                background: -moz-linear-gradient(45deg, #FFFFFF 0%, #FFFFFF 100%);
+                background: -webkit-linear-gradient(45deg, #FFFFFF 0%,#FFFFFF 100%);
+                background: linear-gradient(45deg, #FFFFFF 0%,#FFFFFF 100%);
+                font-family: 'Roboto', sans-serif;
+                font-size: 14px;
             }
 
-            /* Bubbles with text from bot and user */
-            #webchat .css-ostbv8.bubble {
-                border: none;
+            /* Bubbles with text and attachment content */
+            #webchat 
+            .content .css-cekmep.bubble{
+                background-color: #DDEEFA; /* #ECECEC */
                 border-radius: 10px;
+                border-bottom-left-radius: 0;
+                border: none;
             }
-
-            #webchat .markdown.css-o3xlyv{
-                background-color: #DDEEFA;
-            }
-
-            /* Bubbles with text from user */
-            #webchat .css-ostbv8.from-user.bubble {
-                color: white;
+            #webchat 
+            .content .css-cekmep.bubble.from-user{
                 background-color: #FF692D;
+                color: white;
                 border-bottom-right-radius: 0;
+                border-bottom-left-radius: 10px;
             }
 
-            /* Bubbles with buttons */
-            #webchat .css-ostbv8.attachment.bubble {
-                background-color: transparent;
-                border: none;
-            }
-
-            /* Bubble with image */
-            #webchat .css-ostbv8.attachment.bubble .ac-image > img {
+            /* Bubbles with card attachment content, like column of buttons or adaptive card */
+            #webchat 
+            .content .css-cekmep.attachment.bubble{
                 border-radius: 10px;
+                background-color: transparent;
             }
-
-            /* List of buttons */
-            #webchat .ac-container button.ac-pushButton{
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton{
                 color: #FF692D;
                 border-color: #FF692D;
-                border-bottom: none;
                 cursor: pointer;
-            }
-            #webchat .ac-container button.ac-pushButton:active{
-                background-color: #FF692D;
-                border-color: #FF692D;
-                color: white;
                 border-bottom: none;
+                outline: none;
             }
-            #webchat .ac-container>div>div>div> button.ac-pushButton:first-child{
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:first-child{
                 border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
             }
-            #webchat .ac-container>div>div>div> button.ac-pushButton:last-child{
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:last-child{
                 border-bottom-left-radius: 10px;
                 border-bottom-right-radius: 10px;
                 border-bottom: 1px solid;
             }
-            #webchat .ac-container>div>div>div div{ /*divs between buttons*/
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:active{
+                background-color: #FF692D;
+                color: white;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet > div{
                 display: none;
             }
 
-            /* Input for entering messages */
-            #webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc input{
+            /* Bubble with predefined welcome image */
+            #webchat 
+            .content .css-cekmep.attachment.bubble{
+                border-radius: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble img{
+                border-radius: 10px;
+            }
+
+            /* Form and with input for entering messages */
+            #webchat 
+            form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc,
+            #webchat 
+            form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input{
                 background-color: #EDF0F5;
             }
 
-            #webchat button.css-1yicgt3{
+            /* Upload file button */
+            #webchat 
+            .css-1lzfo2b.css-14x775w{
+                display: none;
+            }
+
+            /* Button for sending messages */
+            #webchat 
+            button.css-115fwte{
                 background-color: #1E23E6;
-                /* width: 40px; */
             }
-
-            #webchat button.css-1yicgt3 svg{
-                fill: white;
-            }
-
-            /*Container of each message*/
-            /* .minimizable-web-chat > .chat-box >  */
-            #webchat li .content .row{
-                max-width: 100%;
-                margin: auto 0;
-            } 
-
-            /*Container of each message's hour*/
-            /* .minimizable-web-chat > .chat-box >  */
-            #webchat li .content .row.message{
-                max-width: 100%;
-                margin: auto 0;
-            }
-
-            /*Container of image upload button*/
-            /* .minimizable-web-chat > .chat-box >  */
-            #webchat .css-1lzfo2b.css-15g3li9{
-                display: none;
-            }
-
-            .css-7xorrq.avatar{
-                display: none;
-            }
+            #webchat 
+            button.css-115fwte svg{
+                fill: #FFFFFF;
+            }​
 
             input[type="color"],
 			input[type="date"],
@@ -134,7 +134,7 @@
 			}
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="./webchat_4.2.0-es5.js"></script>
+        <script src="./webchat_4.4.1-es5.js"></script>
         <link href="./chat.css">
     </head>
     <body>
