@@ -202,6 +202,20 @@
     display: none;
 }
 
+/* Suggested actions */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-ovmwp4 .css-u4skb7 button{
+    border-radius: 10px;
+    outline: none;
+    color: #FF692D;
+    cursor: pointer;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-ovmwp4 .css-u4skb7 button:active{
+    background-color: #FF692D;
+    color: white;
+}
+
 /* Bubble with predefined welcome image */
 .minimizable-web-chat > .chat-box > #webchat 
 .content .css-cekmep.attachment.bubble{

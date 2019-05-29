@@ -222,6 +222,20 @@
     display: none;
 }
 
+/* Suggested actions */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-ovmwp4 .css-u4skb7 button{
+    border-radius: 10px;
+    outline: none;
+    color: #0075AC;
+    cursor: pointer;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-ovmwp4 .css-u4skb7 button:active{
+    background-color: #0075AC;
+    color: white;
+}
+
 /* Bubbles in carousel of cards */
 .minimizable-web-chat > .chat-box > #webchat 
 .content ul li .css-cekmep{
