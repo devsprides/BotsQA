@@ -111,8 +111,8 @@ function renderWebChat(){
         // styleSet.textContent.fontWeight = 'bold';
     }
 
-    // $.get('https://qa.gpbot.ai/getToken', { botId: 'ICT' }, function(res){
-    $.get('http://localhost:3798/getToken', { botId: 'ICT' }, function(res){
+    $.get('https://qa.gpbot.ai/getToken', { botId: 'ICT' }, function(res){
+    // $.get('http://localhost:3798/getToken', { botId: 'ICT' }, function(res){
         console.log('Token response:', res);
         dlToken = res.token;
 
