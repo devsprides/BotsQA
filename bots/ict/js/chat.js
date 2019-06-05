@@ -66,8 +66,8 @@ $(document).ready(function() {
 
 function openChatWindow() {
     if(window.innerWidth < MOBILE_WINDOW_WIDTH){
-        // window.open('./mchat.html');
-        window.open(ROOT_FOLDER + 'js/chatboot/mchat.html');
+        window.open('./mchat.html');
+        // window.open(ROOT_FOLDER + 'js/chatboot/mchat.html');
     }
     else{
         $('.minimizable-web-chat div.chat-box').addClass('chat-visible');
