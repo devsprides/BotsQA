@@ -128,7 +128,18 @@
     }
 
     function closeChatWindow(){
-        location.reload();
+        // location.reload();
+        
+        minimizeChatWindow();
+        directLineConn.postActivity({
+            from: user,
+            name: 'requestEndConversation',
+            type: 'event',
+            value: userId
+        })
+        .subscribe(function(id){
+            console.log('"trigger requestEndConversation" sent');
+        });
     }
     
     function renderWebChat(){
