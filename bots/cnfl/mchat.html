@@ -136,83 +136,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="./webchat_4.4.1-es5.js"></script>
         <link href="./chat.css">
+        <script src="./chat.js"></script>
     </head>
     <body>
         <div id="webchat"></div>
-        <script>
-            console.log('Rendering webchat...');
-            const styleSet = window.WebChat.createStyleSet({
-                bubbleBackground: 'rgba(66, 200, 244, .4)',
-                bubbleFromUserBackground: 'rgba(141, 193, 44, .4)'
-            });
-            if(styleSet && styleSet.textContent){
-                // styleSet.textContent.fontFamily = '\'Comic Sans MS\', \'Arial\', sans-serif';
-                // styleSet.textContent.fontWeight = 'bold';
-            }
-            // var userId = generateUserId();
-            var userId = "123456789";
-            const user = { id: userId };
-            const directLineConn = window.WebChat.createDirectLine({ 
-                secret_qa: 'pMd2zxE-qYo.tdAy3LxTPcFZ5JAzghoIbow6Yk3kE-4PL7lx-VbneMU',
-                secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
-                secret: 'pMd2zxE-qYo.tdAy3LxTPcFZ5JAzghoIbow6Yk3kE-4PL7lx-VbneMU',
-                user: user,
-                bot: { id: 'Bot' }
-                ,resize: 'detect'
-            });
-            window.WebChat.renderWebChat({
-                directLine: directLineConn,
-                botAvatarInitials: 'Bot',
-                userAvatarInitials: 'User',
-                styleSet
-            }, document.getElementById('webchat'));
-        
-            setTimeout(function(){
-                directLineConn.postActivity({
-                    from: user,
-                    name: 'requestWelcomeDialog',
-                    type: 'event',
-                    value: userId
-                })
-                .subscribe(function(id){
-                    console.log('"trigger requestWelcomeDialog" sent');
-                    jQuery('#webchat form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input')
-                    .attr('placeholder', 'Responder a Sofi');
-                });
-            }, 1000);
-
-            function generateUserId(){
-                return Date.now().toString() + (Math.floor(Math.random() * 1000000) + 1).toString();
-            }
-
-            function addFakeMessageFromBot(message){
-                jQuery('.css-dhu3ty.css-7c9av6')
-                        // .append('<li class="css-1qyo5rb"><div class="css-hgucfj css-1wi3416"><div class="css-7xorrq avatar">Bot</div><div class="content"><div class="row message"><div class="css-ostbv8 bubble"><div class="markdown css-9qpka5"><p>'
-                        //     + greeting
-                        //     + '</p></div></div><div class="filler"></div></div><div class="row"><span class="css-1phiexw">' 
-                        //     //+ 'Just now'
-                        //     + '</span><div class="filler"></div></div></div><div class="filler"></div></div></li>')
-                        // }, 1500);
-                        .append('<li class="css-1qyo5rb"><div class="css-hgucfj css-1wi3416"><div class="css-7xorrq avatar">Bot</div><div class="content"><div class="row message"><div class="css-ostbv8 bubble"><div class="markdown css-o3xlyv"><p>'
-                            + message
-                            + '</p></div></div><div class="filler"></div></div><div class="row"><span class="css-1phiexw">'
-                            // + 'Just now'
-                            + '</span><div class="filler"></div></div></div><div class="filler"></div></div></li>');
-            }
-
-            function sendEventToBot(eventName){
-                if(directLineConn){
-                    directLineConn.postActivity({
-                        from: user,
-                        name: eventName,
-                        type: 'event',
-                        value: userId
-                    })
-                    .subscribe(function(id){
-                        console.log('Sent event ' + eventName);
-                    });
-                }
-            }
-        </script>
     </body>
 </html>

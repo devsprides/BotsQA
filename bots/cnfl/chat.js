@@ -69,7 +69,11 @@
             var closeChatButton = jQuery('.minimizable-web-chat .chat-box div.close-chat');
             maximizeChatButton.click(openChatWindow);
             minimizeChatButton.click(minimizeChatWindow);
-            closeChatButton.click(closeChatWindow)
+            closeChatButton.click(closeChatWindow);
+
+            if(window.innerWidth < 750){
+                renderWebChat();
+            }
         });
     }
 
