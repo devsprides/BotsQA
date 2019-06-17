@@ -71,7 +71,7 @@
             minimizeChatButton.click(minimizeChatWindow);
             closeChatButton.click(closeChatWindow);
 
-            if(window.innerWidth < 750){
+            if(document.URL.endsWith("mchat.html")){
                 renderWebChat();
             }
         });
