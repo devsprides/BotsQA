@@ -147,8 +147,9 @@
     bottom: 0;
     width: 100%;
     /* max-height: 91%; */
-
     box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
+
+    overflow-y: hidden;
 }
 
 /* Bubbles with text and attachment content */
