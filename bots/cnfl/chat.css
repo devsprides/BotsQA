@@ -1,33 +1,23 @@
 
 .minimizable-web-chat > button.maximize {
     border-radius: 14%;
-    border:none;
     bottom: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     cursor: pointer;
     font-size: 30px;
     height: 64px;
     outline: 0;
-    /* padding: 15px; */
     position: fixed;
     right: 20px;
     width: 64px;
+    text-decoration: none;
+    display: inline-block;
     background: url('./img/00-Avatar-Burbuja.png');
     background-size: contain;
+    border:none;
 }
 
-.minimizable-web-chat > button.maximize > .message-notification{
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #FF692D;
-    font-family: 'Roboto', sans-serif;
-    font-size: 10px;
-    font-weight: bold;
-    padding: 4px 7px;
-    border-radius: 50%;
-    color: White;
-}
+
 
 /* .minimizable-web-chat > button.maximize:focus:not(:active),
 .minimizable-web-chat > button.maximize:hover:not(:active) {
@@ -42,6 +32,19 @@
     visibility: hidden;
 }
 
+.minimizable-web-chat > button.maximize > .message-notification{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    padding: 4px 7px;
+    border-radius: 50%;
+    background-color: #FF692D;
+    color: White;
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
 .minimizable-web-chat > .chat-box * {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -50,7 +53,7 @@
 .minimizable-web-chat > .chat-box {
     /* backdrop-filter: blur(10px); */
     /* box-shadow: 0 0 20px rgba(0, 0, 0, .2); */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    
     position: fixed;
     bottom: 0;
     top: 100px;
@@ -62,7 +65,9 @@
     min-height: 300px;
     z-index: 3;
     min-height: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
     visibility: hidden;
+    
 }
 
 
@@ -76,7 +81,8 @@
 
 .minimizable-web-chat > .chat-box header {
     background-color: #FF692D;
-    height: 45px;
+    height: 8%;
+    min-height: 50px;
     display: flex;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -107,15 +113,17 @@
 .minimizable-web-chat > .chat-box header .title .name{
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    margin-bottom: -5px;
+    margin-bottom: -3px;
 }
 
 .minimizable-web-chat > .chat-box header .title .status .green_dot{
     width: 10px;
     height: 10px;
-    background-color: lightgreen;
+    background-color: #00FF13;
     border-radius: 50%;
     display: inline-block;
+    margin-top: 4px;
+    margin-right: 4px;
 }
 
 .minimizable-web-chat > .chat-box header .title .status label{
@@ -130,6 +138,7 @@
     margin-top: auto;
     margin-bottom: auto;
     display: flex;
+    
 }
 
 .minimizable-web-chat > .chat-box header .buttons div{
@@ -144,12 +153,10 @@
 .minimizable-web-chat > .chat-box > #webchat {
     flex: 1;
     display: flex;
-    bottom: 0;
+    max-height: 92%; /* The rest is for the .chat-box>header */
     width: 100%;
-    /* max-height: 91%; */
-    box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
 
-    overflow-y: hidden;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
 }
 
 /* Bubbles with text and attachment content */
@@ -166,6 +173,17 @@
     color: white;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 10px;
+}
+
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* Fix problem of big white space after content */
+    .minimizable-web-chat > .chat-box > #webchat
+    .css-1t62idy.css-990gl9 .css-gtdio3.css-mfy564 .css-y1c0xs.css-ca0rlf
+    ul.css-ljhy6a.css-7c9av6
+    {
+        height: 100%;
+    }
 }
 
 /* Bubbles with card attachment content, like column of buttons or adaptive card */
@@ -247,6 +265,19 @@ form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input{
 .minimizable-web-chat > .chat-box > #webchat 
 button.css-115fwte{
     background-color: #1E23E6;
+}
+
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .minimizable-web-chat > button.maximize {
+        margin-right: 20px;
+        margin-bottom: 5px;
+        position: static;
+    }
+    .minimizable-web-chat > button.maximize > .message-notification{
+        margin-right: 20px;
+        margin-bottom: 5px;
+    }
 }
 .minimizable-web-chat > .chat-box > #webchat 
 button.css-115fwte svg{

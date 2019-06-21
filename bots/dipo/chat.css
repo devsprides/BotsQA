@@ -167,6 +167,17 @@
     box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
 }
 
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* Fix problem of big white space after content */
+    .minimizable-web-chat > .chat-box > #webchat
+    .css-1t62idy.css-990gl9 .css-gtdio3.css-mfy564 .css-y1c0xs.css-ca0rlf
+    ul.css-ljhy6a.css-7c9av6
+    {
+        height: 100%;
+    }
+}
+
 /*Container-1, inside #webchat*/
 .minimizable-web-chat > .chat-box > #webchat 
 .css-1t62idy.css-cwp94z{
@@ -361,6 +372,18 @@ button.css-1yicgt3{
     color: white;
     font-size: 10px;
   }
+  
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .minimizable-web-chat > button.maximize {
+        margin-right: 20px;
+        margin-bottom: 5px;
+        position: static;
+    }
+    .minimizable-web-chat > button.maximize > .badge{
+        margin-right: 20px;
+        margin-bottom: 5px;
+    }
+}
 
   button.css-1yicgt3 svg{
     fill: white;

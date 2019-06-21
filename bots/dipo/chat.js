@@ -76,35 +76,33 @@
         
     }
 
-    var gpTemplateHtml = `
-        <div class="minimizable-web-chat">            
-            <button class="maximize">                                 
-                    <span class="badge">1</span>
-            </button>
-            <div class="chat-box right">
-                <header>
-                    <div>
-                    <img src="img/00-Avatar-Dipo.png" width="32px" height="32px" 
-                    style="border-radius: 50%; right: 20px; bottom: 20px; margin-top: 25%; margin-left: 30%;" />
-                    </div>
-                    <div class="title">
-                        <b><label style="text-align:left;">Pocho</label></b>
-                        <div class="status">
-                            <div class="green_dot"></div>
-                            <label style="text-align:left; font-size:60%;">En Línea</label>
-                        </div>
-                    </div>
-                    <div class="minimize-chat">
-                        <img id="imagenMinimizar" style="width:25px; height:25px"; src="img/baseline_minimize_white_36dp.png"/>
-                    </div>      
-                    <div class="minimize-chat">
-                         <img id="imagenCerrar" style="width:25px; height:25px"; src="img/baseline_close_white_48dp.png"/>
-                    </div>
-                </header>
-                <div id="webchat"></div>
-            </div>
-        </div>
-    `;
+    var gpTemplateHtml = '<div class="minimizable-web-chat"> '
+           + '<button class="maximize"> '                               
+                   + '<span class="badge">1</span>'
+           + '</button>'
+           + '<div class="chat-box right"> '
+               + '<header> '
+                   + '<div> '
+                   + '<img src="img/00-Avatar-Dipo.png" width="32px" height="32px" '
+                   + 'style="border-radius: 50%; right: 20px; bottom: 20px; margin-top: 25%; margin-left: 30%;" /> '
+                   + '</div> '
+                   + '<div class="title"> '
+                       + '<b><label style="text-align:left;">Pocho</label></b> '
+                       + '<div class="status"> '
+                           + '<div class="green_dot"></div> '
+                           + '<label style="text-align:left; font-size:60%;">En Línea</label> '
+                       + '</div> '
+                   + '</div> '
+                   + '<div class="minimize-chat">'
+                       + '<img id="imagenMinimizar" style="width:25px; height:25px"; src="img/baseline_minimize_white_36dp.png"/> '
+                   + '</div> '
+                   + '<div class="minimize-chat"> '
+                        + '<img id="imagenCerrar" style="width:25px; height:25px"; src="img/baseline_close_white_48dp.png"/> '
+                   + '</div> '
+               + '</header> '
+               + '<div id="webchat"></div> '
+           + '</div> '
+       + '</div> ';
 
     function openChatWindow() {
         if(window.innerWidth < 750){
@@ -147,7 +145,7 @@
             userID: user.id,
             botAvatarInitials: 'Bot',
             userAvatarInitials: 'User',
-            styleSet
+            styleSet: styleSet
         }, document.getElementById('webchat'));
     
         setTimeout(function(){

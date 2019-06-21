@@ -6,6 +6,12 @@
     var userId;
     var user;
     var chatClosed = false;
+
+    if (!String.prototype.endsWith) { //Polyfill for IE
+        String.prototype.endsWith = function(suffix) {
+            return this.indexOf(suffix, this.length - suffix.length) !== -1;
+        };
+    }
     
     /******** Load jQuery if not present *********/
     if (window.jQuery === undefined || window.jQuery.fn.jquery !== '3.2.1') {
@@ -77,36 +83,34 @@
         });
     }
 
-    var gpTemplateHtml = `
-        <div class="minimizable-web-chat">
-            <button class="maximize">
-                <div class="message-notification">1</div>
-            </button>
-            <div class="chat-box right">
-                <header>
-                    <div class="title">
-                        <div class="picture"></div>
-                        <div class="text">
-                            <div class="name">Sofi</div>
-                            <div class="status">
-                                <div class="green_dot"></div>
-                                <label>En Línea</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="buttons">
-                        <div class="minimize-chat">
-                            <img src="img/baseline_minimize_white_36dp.png"/>
-                        </div>
-                        <div class="close-chat">
-                            <img src="img/baseline_close_white_48dp.png"/>
-                        </div>
-                    </div>
-                </header>
-                <div id="webchat"></div>
-            </div>
-        </div>
-    `;
+    var gpTemplateHtml = '<div class="minimizable-web-chat"> ' 
+            + '<button class="maximize">'
+               + '<div class="message-notification">1</div> '
+            + '</button> '
+            + '<div class="chat-box right"> '
+               + '<header> '
+                  + '<div class="title"> '
+                       + '<div class="picture"></div> '
+                       + '<div class="text"> '
+                           + '<div class="name">Sofi</div> '
+                           + '<div class="status"> '
+                               + '<div class="green_dot"></div> '
+                               + '<label>En Línea</label> '
+                           + '</div> '
+                       + '</div> '
+                   + '</div> '
+                   + '<div class="buttons"> '
+                       + '<div class="minimize-chat"> '
+                           + '<img src="img/baseline_minimize_white_36dp.png"/> '
+                       + '</div> '
+                       + '<div class="close-chat"> '
+                           + '<img src="img/baseline_close_white_48dp.png"/> '
+                       + '</div> '
+                   + '</div> '
+               + '</header> '
+               + '<div id="webchat"></div> '
+           + '</div> '
+       + '</div> ';
 
     function openChatWindow() {
         if(window.innerWidth < 750){
@@ -132,7 +136,7 @@
     }
 
     function closeChatWindow(){
-        // location.reload();
+         // location.reload();
         
         minimizeChatWindow();
         directLineConn.postActivity({
@@ -162,9 +166,11 @@
             userID: user.id,
             botAvatarInitials: 'Bot',
             userAvatarInitials: 'User',
-            styleSet
+            styleSet: styleSet
         }, document.getElementById('webchat'));
     
+        //displayAnimation();
+
         setTimeout(function(){
             directLineConn.postActivity({
                 from: user,
@@ -271,6 +277,36 @@
     function disableMessageInput(){
         jQuery('#webchat form.css-1yaojre.css-sdb7gy.css-1fe8kfc > input').attr('disabled', true);
         jQuery('#webchat button').attr('disabled', true);
+    }
+
+       //For webchat v4.4.1
+       function displayAnimation(){
+        jQuery('.css-ljhy6a.css-7c9av6')
+            .append(jQuery(
+                '	<li class="css-1qyo5rb hide-timestamp" role="listitem">'
+                +'		<div class="css-tyxksf css-2p02md">'
+                +'			<div class="content">'
+                +'				<div class="webchat__row attachment">'
+                +'					<div id="welcome-image" class="css-cekmep attachment bubble">'
+                +'						<div class="css-1vieo9r">'
+                +'							<div class="ac-container" tabindex="0" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto; padding: 15px;">'
+                +'								<div class="ac-container" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                +'									<div style="display: flex; align-items: flex-start; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                +'										<img class="ac-image" src="https://gpbot.blob.core.windows.net/gpbot/cnfl/Saludo.png" alt="" style="max-height: 100%; min-width: 0px; width: 100%;">'
+                +'									</div>'
+                +'								</div>'
+                +'							</div>'
+                +'						</div>'
+                +'					</div>'
+                +'				</div>'
+                +'				<div aria-hidden="true" class="webchat__row"><span class="css-1s8geyi timestamp transcript-timestamp">Hace 6 minutos</span>'
+                +'					<div class="filler"></div>'
+                +'				</div>'
+                +'			</div>'
+                +'			<div class="filler"></div>'
+                +'		</div>'
+                +'	</li>'
+            ).hide().fadeIn(2000));
     }
     
     })();
