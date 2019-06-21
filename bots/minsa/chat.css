@@ -80,7 +80,7 @@
 }
 
 .minimizable-web-chat > .chat-box header {
-    background-color: #FF692D;
+    background-color: #008567;
     height: 8%;
     min-height: 50px;
     display: flex;
@@ -170,7 +170,7 @@
 }
 .minimizable-web-chat > .chat-box > #webchat 
 .content .css-cekmep.bubble.from-user{
-    background-color: #FF692D;
+    background-color: #008567;
     color: white;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 10px;
@@ -195,8 +195,8 @@
 }
 .minimizable-web-chat > .chat-box > #webchat 
 .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton{
-    color: #FF692D;
-    border-color: #FF692D;
+    color: #008567;
+    border-color: #008567;
     cursor: pointer;
     border-bottom: none;
     outline: none;
@@ -214,7 +214,7 @@
 }
 .minimizable-web-chat > .chat-box > #webchat 
 .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:active{
-    background-color: #FF692D;
+    background-color: #008567;
     color: white;
 }
 .minimizable-web-chat > .chat-box > #webchat 
@@ -227,12 +227,12 @@
 .css-gtdio3.css-ovmwp4 .css-u4skb7 button{
     border-radius: 10px;
     outline: none;
-    color: #FF692D;
+    color: #008567;
     cursor: pointer;
 }
 .minimizable-web-chat > .chat-box > #webchat 
 .css-gtdio3.css-ovmwp4 .css-u4skb7 button:active{
-    background-color: #FF692D;
+    background-color: #008567;
     color: white;
 }
 
