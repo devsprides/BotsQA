@@ -180,7 +180,7 @@
             })
             .subscribe(function(id){
                 console.log('"trigger requestWelcomeDialog" sent');
-                jQuery('.minimizable-web-chat > .chat-box > #webchat form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input')
+                jQuery('#webchat form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input')
                     .attr('placeholder', 'Responder a MINSA');
             });
         }, 1000);

@@ -185,6 +185,16 @@
     {
         height: 100%;
     }
+
+    /*Fix vertical margin*/
+    .minimizable-web-chat > .chat-box header .title {
+        margin: 8px 20px;
+    }
+
+    /*Fix vertical margin*/
+    .minimizable-web-chat > .chat-box header .buttons{
+        margin: 12px 15px;
+    }
 }
 
 /* Bubbles with card attachment content, like column of buttons or adaptive card */
