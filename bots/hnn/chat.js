@@ -50,7 +50,7 @@
             directLineConn = window.WebChat.createDirectLine({ 
                 secret_qa: 'HQ4NY4XMCYs._qCGJbmah4fS5zUV0taYZDkKUFIIiSTxf94hyk-qEls',
                 secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
-                secret: 'HQ4NY4XMCYs._qCGJbmah4fS5zUV0taYZDkKUFIIiSTxf94hyk-qEls',
+                secret: 'HQ4NY4XMCYs.FbIQoQVysmlIw73CLYthwdxotzWDM-Pca7y4Pb5fVig',
                 user: user,
                 bot: { id: 'Bot' }
                 ,resize: 'detect'
