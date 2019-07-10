@@ -5,11 +5,45 @@ var user;
 var directLineConn;
 var dlToken;
 // var ROOT_FOLDER = '/sites/default/chatboot/'
-var ROOT_FOLDER = '';
+var ROOT_FOLDER = 'https://gpbot.azureedge.net/ict/webchat/'
+// var ROOT_FOLDER = '';
 var chatLanguage = 'en';
 
 $(document).ready(function() {
     // CHAT WINDOW EVENTS
+    var gpTemplateHtml = 
+    '<div class="minimizable-web-chat">'
+    + '<button class="maximize">'
+        + '<img src="' + ROOT_FOLDER + 'img/Avatar-Sloth.jpg" width="64px" height="64px" '
+            + 'style="border-radius: 50%; position: fixed; right: 20px; bottom: 20px;" />'
+        + '</button>'
+        + '<div id="animation-box"></div>'
+        + '<div class="chat-box right">'
+            + '<img src="' + ROOT_FOLDER + 'img/MrSloth.png" class="header-image">'
+            + '<header>'
+                + '<div class="title">'
+                    + '<div class="title-username">'
+                        + '<label>Mr. Sloth</label>'
+                        + '<img src="' + ROOT_FOLDER + 'img/Costa-Rica-Flag-icon.png">'
+                    + '</div>'
+                    + '<div class="title-online-status">'
+                        + '<label>Online</label>'
+                    + '</div>'
+                + '</div>'
+                + '<div class="filler"></div>'
+                + '<div class="minimize-chat">'
+                    + '<img src="' + ROOT_FOLDER + 'img/baseline_minimize_white_18dp.png"/>'
+                + '</div>'
+                + '<div class="close-chat">'
+                    + '<img src="' + ROOT_FOLDER + 'img/baseline_close_white_18dp.png"/>'
+                + '</div>'
+                + '<div id="close-chat-popover"></div>'
+            + '</header>'
+            + '<div id="webchat"></div>'
+        + '</div>'
+    + '</div>';
+    $('#gp_webchat').html(gpTemplateHtml);
+
     chatRendered = false;
     var maximizeChatButton = $('.minimizable-web-chat button.maximize');
     var minimizeChatButton = $('.minimizable-web-chat .chat-box div.minimize-chat img');

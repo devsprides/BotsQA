@@ -98,6 +98,10 @@
     }
 }
 
+.minimizable-web-chat > .chat-box .header-image {
+    display: none;
+}
+
 @supports (-ms-ime-align:auto) {
     .minimizable-web-chat > .chat-box {
         width: 350px;
