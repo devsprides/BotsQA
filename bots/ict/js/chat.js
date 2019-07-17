@@ -12,10 +12,9 @@ var chatLanguage = 'en';
 $(document).ready(function() {
     // CHAT WINDOW EVENTS
     var gpTemplateHtml = 
-    '<div class="minimizable-web-chat">'
-    + '<button class="maximize">'
-        + '<img src="' + ROOT_FOLDER + 'img/Avatar-Sloth.jpg" width="64px" height="64px" '
-            + 'style="border-radius: 50%; position: fixed; right: 20px; bottom: 20px;" />'
+        '<div class="minimizable-web-chat">'
+        + '<button class="maximize">'
+            + '<div class="message-notification">1</div> '
         + '</button>'
         + '<div id="animation-box"></div>'
         + '<div class="chat-box right">'
@@ -44,6 +43,10 @@ $(document).ready(function() {
     + '</div>';
     $('#gp_webchat').html(gpTemplateHtml);
 
+    $.ajaxSetup({
+        // Disable caching of AJAX responses
+        cache: false
+    });
     chatRendered = false;
     var maximizeChatButton = $('.minimizable-web-chat button.maximize');
     var minimizeChatButton = $('.minimizable-web-chat .chat-box div.minimize-chat img');
