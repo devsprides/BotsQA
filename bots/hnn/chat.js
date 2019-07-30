@@ -87,7 +87,7 @@
                 + '<div class="title">'
                     + '<div class="picture"></div>'
                     + '<div class="text">'
-                        + '<div class="name">Bety de HNN</div>'
+                        + '<div class="name">Dra. Sol</div>'
                         + '<div class="status">'
                             + '<div class="green_dot"></div>'
                             + '<label>En Línea</label>'

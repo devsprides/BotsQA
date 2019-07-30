@@ -40,7 +40,7 @@
     right: 3px;
     padding: 5px 8px;
     border-radius: 50%;
-    background:#FF5D00;
+    background:#FFF80E;
     color: white;
     font-size: 10px;
 }
@@ -74,7 +74,7 @@
 }
 
 .minimizable-web-chat > .chat-box header {
-    background-color: #FF5D00;
+    background-color: #FFF80E;
     height: 8%;
     min-height: 50px;
     display: flex;
