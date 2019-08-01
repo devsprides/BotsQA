@@ -4,8 +4,8 @@ var userId;
 var user;
 var directLineConn;
 var dlToken;
-var LOCAL_FOLDER = '/sites/default/chatboot/'; //Path in ICT site where the webchat files are located
-var ROOT_FOLDER = 'https://gpbot.azureedge.net/ict/webchat/';
+var LOCAL_FOLDER = '/sites/default/chatboot/'
+var ROOT_FOLDER = 'https://gpbot.azureedge.net/ict/webchat/'
 // var ROOT_FOLDER = '';
 var chatLanguage = 'en';
 
@@ -73,7 +73,7 @@ $(document).ready(function() {
     //POPOVER FOR CLOSING CHAT
     var popoverTitle = pageLanguage === 'es' ? 'Cerrar chat' : 'Close chat';
     var popoverContent = pageLanguage === 'es' ? 
-        'Â¿Desea finalizar la convesaciÃ³n?'
+        '¿Desea finalizar la convesación?'
         : 'Are you sure you want to finish the conversation?';
     var popoverConfirm = pageLanguage === 'es' ? 'Confirmar' : 'Confirm';
     var popoverCancel = pageLanguage === 'es' ? 'Cancelar' : 'Cancel';
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
 function openChatWindow() {
     if(window.innerWidth < MOBILE_WINDOW_WIDTH){
-        // window.open('./mchat.html');
+        //window.open('./mchat.html');
         window.open(LOCAL_FOLDER + 'mchat.html');
     }
     else{
@@ -195,7 +195,7 @@ function renderWebChat(){
 }
 
 function setChangeLanguageEvent(){
-	var languageButton = $('button:contains("EspaÃ±ol")');
+	var languageButton = $('button:contains("Español")');
 	if(languageButton && languageButton.html()){
 		$(languageButton).click(function(){
 			chatLanguage = 'es';
