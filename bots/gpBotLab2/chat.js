@@ -50,7 +50,8 @@
             directLineConn = window.WebChat.createDirectLine({ 
                 secret_qa: 'HQ4NY4XMCYs._qCGJbmah4fS5zUV0taYZDkKUFIIiSTxf94hyk-qEls',
                 secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
-                secret: 'GOWld-pMKeg.a4lgcyau-7fWWgn3UbdM-1yvqXNvUXMCMgE6VUWISkM',
+                secret_dev2: 'GOWld-pMKeg.a4lgcyau-7fWWgn3UbdM-1yvqXNvUXMCMgE6VUWISkM',
+                secret: 'V0ES7JA4i_Y.cwA.p54.E3JTUew9LRk9-oG6dUEfF9htXAQW7pWBabqlksjEBuo',
                 user: user,
                 bot: { id: 'Bot' }
                 ,resize: 'detect'
@@ -87,7 +88,7 @@
                 + '<div class="title">'
                     + '<div class="picture"></div>'
                     + '<div class="text">'
-                        + '<div class="name">Dra. Sol</div>'
+                        + '<div class="name">Betty</div>'
                         + '<div class="status">'
                             + '<div class="green_dot"></div>'
                             + '<label>En Línea</label>'
@@ -284,7 +285,7 @@
                 +'							<div class="ac-container" tabindex="0" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto; padding: 15px;">'
                 +'								<div class="ac-container" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
                 +'									<div style="display: flex; align-items: flex-start; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
-                +'										<img class="ac-image" src="https://gpbot.blob.core.windows.net/gpbot/hnn/Saludo.png" alt="" style="max-height: 100%; min-width: 0px; width: 100%;">'
+                +'										<img class="ac-image" src="img/fondo.png" alt="" style="max-height: 100%; min-width: 0px; width: 100%;">'
                 +'									</div>'
                 +'								</div>'
                 +'							</div>'
