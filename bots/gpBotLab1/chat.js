@@ -158,7 +158,7 @@
 
         displayAnimation();
     
-        setTimeout(function(){
+     /*   setTimeout(function(){
             directLineConn.postActivity({
                 from: user,
                 name: 'requestWelcomeDialog',
@@ -168,7 +168,7 @@
             .subscribe(function(id){
                 console.log('"trigger requestWelcomeDialog" sent');
             });
-        }, 1000);
+        }, 1000); */
         
     }
 
