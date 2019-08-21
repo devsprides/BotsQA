@@ -87,7 +87,7 @@
                 + '<div class="title">'
                     + '<div class="picture"></div>'
                     + '<div class="text">'
-                        + '<div class="name">Betty</div>'
+                        + '<div class="name">Bety</div>'
                         + '<div class="status">'
                             + '<div class="green_dot"></div>'
                             + '<label>En Línea</label>'
