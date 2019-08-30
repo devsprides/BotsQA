@@ -1,0 +1,281 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <style>
+            html, body {
+                height: 100%
+            }
+            body {
+                margin: 0
+            }
+            #webchat, #webchat > * {
+                height: 100%;
+                width: 100%;
+                /* background: -moz-linear-gradient(45deg, #DDEEFA 0%, #d6eaf8 100%);
+                background: -webkit-linear-gradient(45deg, #DDEEFA 0%,#d6eaf8 100%);
+                background: linear-gradient(45deg, #DDEEFA 0%,#d6eaf8 100%); */
+                background: -moz-linear-gradient(45deg, #FFFFFF 0%, #FFFFFF 100%);
+                background: -webkit-linear-gradient(45deg, #FFFFFF 0%,#FFFFFF 100%);
+                background: linear-gradient(45deg, #FFFFFF 0%,#FFFFFF 100%);
+                font-family: "Open Sans", sans-serif;
+                font-size: 14px;
+            }
+
+            /* Bubbles with text and attachment content */
+            #webchat 
+            .content .css-cekmep.bubble{
+                background-color: rgba(236,236,236, 1); /* #ECECEC */
+                border-radius: 10px;
+                border-bottom-left-radius: 0;
+            }
+            #webchat 
+            .content .css-cekmep.bubble.from-user{
+                background-color: rgba(0, 117, 172, 1); /* #0075AC */
+                color: white;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 10px;
+            }
+
+            /* Bubbles with card attachment content, like column of buttons or adaptive card */
+            #webchat 
+            .content .css-cekmep.attachment.bubble{
+                border-radius: 10px;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton{
+                color: #0075AC;
+                border-color: #0075AC;
+                cursor: pointer;
+                border-bottom: none;
+                outline: none;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:first-child{
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:last-child{
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: 1px solid;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:active{
+                background-color: #0075AC;
+                color: white;
+            }
+            #webchat 
+            .content .css-cekmep.attachment.bubble .ac-actionSet > div{
+                display: none;
+            }
+
+            /* Bubbles in carousel of cards */
+            #webchat 
+            .content ul li .css-cekmep{
+                background-color: rgba(236,236,236, 1); /* #ECECEC */
+                border-radius: 10px;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton{
+                color: #0075AC;
+                border-color: #0075AC;
+                cursor: pointer;
+                border-bottom: none;
+                outline: none;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton:first-child{
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton:last-child{
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom: 1px solid;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet button.ac-pushButton:active{
+                background-color: #0075AC;
+                color: white;
+            }
+            #webchat 
+            .content ul li .css-cekmep .ac-actionSet > div{
+                display: none;
+            }
+
+            /* Bubble with predefined welcome image */
+            #webchat 
+            .content #welcome-image.css-cekmep.attachment.bubble{
+                border-radius: 10px;
+                background-color: transparent;
+                border: none;
+            }
+            #webchat 
+            .content #welcome-image.css-cekmep.attachment.bubble img{
+                border-radius: 10px;
+            }
+
+            /* Form and with input for entering messages */
+            #webchat 
+            form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc,
+            #webchat 
+            form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input{
+                background-color: #EDF0F5;
+            }
+
+            /* Upload file button */
+            #webchat 
+            .css-1lzfo2b.css-14x775w{
+                display: none;
+            }
+
+            /* Button for sending messages */
+            #webchat 
+            button.css-115fwte{
+                background-color: #0075AC;
+            }
+            #webchat 
+            button.css-115fwte svg{
+                fill: #FFFFFF;
+            }​
+
+            input[type="color"],
+			input[type="date"],
+			input[type="datetime"],
+			input[type="datetime-local"],
+			input[type="email"],
+			input[type="month"],
+			input[type="number"],
+			input[type="password"],
+			input[type="search"],
+			input[type="tel"],
+			input[type="text"],
+			input[type="time"],
+			input[type="url"],
+			input[type="week"],
+			select:focus,
+			select,
+			textarea {
+			  font-size: 16px !important;
+			}
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="./webchat_4.4.1-es5.js"></script>
+        <script src="./chat.js"></script>
+    </head>
+    <body>
+        <div id="webchat"></div>
+        <script>
+            console.log('Rendering webchat...');
+            const styleSet = window.WebChat.createStyleSet({
+                bubbleBackground: 'rgba(66, 200, 244, .4)',
+                bubbleFromUserBackground: 'rgba(141, 193, 44, .4)'
+            });
+            if(styleSet && styleSet.textContent){
+                // styleSet.textContent.fontFamily = '\'Comic Sans MS\', \'Arial\', sans-serif';
+                // styleSet.textContent.fontWeight = 'bold';
+            }
+            var userId = generateUserId();
+            const user = { id: userId };
+            const directLineConn = window.WebChat.createDirectLine({ 
+                secret_qa: 'HQ4NY4XMCYs._qCGJbmah4fS5zUV0taYZDkKUFIIiSTxf94hyk-qEls',
+                secret_dev: 'X3-5HYsVEf4.cwA.n78.-OJsgUASThdxjH0psyq_5m0rrgxhHvXOJ_m4PvgVk2E',
+                secret: 'DEBqKhpOpFw.mQO6NDmmGY7g7GZtDKCyjSiJBluyApncbCX52n3gfsE',
+                user: user,
+                bot: { id: 'Bot' }
+                ,resize: 'detect'
+            });
+            window.WebChat.renderWebChat({
+                directLine: directLineConn,
+                userID: user.id,
+                botAvatarInitials: 'Bot',
+                userAvatarInitials: 'User',
+                locale: 'es-CR',
+                styleSet
+            }, document.getElementById('webchat'));
+
+            displayAnimation();
+        
+            setTimeout(function(){
+                directLineConn.postActivity({
+                    from: user,
+                    name: 'requestWelcomeDialog',
+                    type: 'event',
+                    value: userId
+                })
+                .subscribe(function(id){
+                    console.log('"trigger requestWelcomeDialog" sent');
+                });
+            }, 1000);
+
+            function generateUserId(){
+                return Date.now().toString() + (Math.floor(Math.random() * 1000000) + 1).toString();
+            }
+
+            function addFakeMessageFromBot(message){
+                jQuery('.css-dhu3ty.css-7c9av6')
+                        // .append('<li class="css-1qyo5rb"><div class="css-hgucfj css-1wi3416"><div class="css-7xorrq avatar">Bot</div><div class="content"><div class="row message"><div class="css-ostbv8 bubble"><div class="markdown css-9qpka5"><p>'
+                        //     + greeting
+                        //     + '</p></div></div><div class="filler"></div></div><div class="row"><span class="css-1phiexw">' 
+                        //     //+ 'Just now'
+                        //     + '</span><div class="filler"></div></div></div><div class="filler"></div></div></li>')
+                        // }, 1500);
+                        .append('<li class="css-1qyo5rb"><div class="css-hgucfj css-1wi3416"><div class="css-7xorrq avatar">Bot</div><div class="content"><div class="row message"><div class="css-ostbv8 bubble"><div class="markdown css-o3xlyv"><p>'
+                            + message
+                            + '</p></div></div><div class="filler"></div></div><div class="row"><span class="css-1phiexw">'
+                            // + 'Just now'
+                            + '</span><div class="filler"></div></div></div><div class="filler"></div></div></li>');
+            }
+
+            function sendEventToBot(eventName){
+                if(directLineConn){
+                    directLineConn.postActivity({
+                        from: user,
+                        name: eventName,
+                        type: 'event',
+                        value: userId
+                    })
+                    .subscribe(function(id){
+                        console.log('Sent event ' + eventName);
+                    });
+                }
+            }
+
+            function displayAnimation(){
+                jQuery('.css-ljhy6a.css-7c9av6')
+                    .append(jQuery(
+                        '	<li class="css-1qyo5rb hide-timestamp" role="listitem">'
+                        +'		<div class="css-tyxksf css-2p02md">'
+                        +'			<div class="content">'
+                        +'				<div class="webchat__row attachment">'
+                        +'					<div id="welcome-image" class="css-cekmep attachment bubble">'
+                        +'						<div class="css-1vieo9r">'
+                        +'							<div class="ac-container" tabindex="0" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto; padding: 15px;">'
+                        +'								<div class="ac-container" style="display: flex; flex-direction: column; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                        +'									<div style="display: flex; align-items: flex-start; justify-content: flex-start; box-sizing: border-box; flex: 0 0 auto;">'
+                        +'										<img class="ac-image" src="img/fondo.png" alt="" style="max-height: 100%; min-width: 0px; width: 100%;">'
+                        +'									</div>'
+                        +'								</div>'
+                        +'							</div>'
+                        +'						</div>'
+                        +'					</div>'
+                        +'				</div>'
+                        +'				<div aria-hidden="true" class="webchat__row"><span class="css-1s8geyi timestamp transcript-timestamp">Hace 6 minutos</span>'
+                        +'					<div class="filler"></div>'
+                        +'				</div>'
+                        +'			</div>'
+                        +'			<div class="filler"></div>'
+                        +'		</div>'
+                        +'	</li>'
+                    ).hide().fadeIn(2000));
+            }
+        </script>
+    </body>
+</html>
