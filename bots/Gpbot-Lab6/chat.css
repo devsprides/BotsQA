@@ -1,0 +1,308 @@
+
+.minimizable-web-chat > button.maximize {
+    border-radius: 50%;
+    bottom: 20px;
+    cursor: pointer;
+    font-size: 30px;
+    font-family: "Open Sans";
+    height: 64px;
+    outline: 0;
+    position: fixed;
+    right: 20px;
+    width: 64px;
+    text-decoration: none;
+    display: inline-block;
+    background: url("img/Icono-Chat.png");
+    background-size: contain;
+    border:none;
+}
+
+.minimizable-web-chat > button.maximize img {
+     border-radius: 50%; 
+     right: 20px; 
+     bottom: 20px;  
+     text-decoration: none;
+     display: inline-block;
+     position: relative;
+}
+
+.minimizable-web-chat > button.maximize:active {
+    background-color: White;
+}
+
+.minimizable-web-chat > button.maximize.chat-button-hidden  {
+    visibility: hidden;
+}
+
+.minimizable-web-chat > button.maximize .badge {
+    position: absolute;
+    top: -4px;
+    right: 3px;
+    padding: 5px 8px;
+    border-radius: 50%;
+    background:#FF692D;
+    color: white;
+    font-size: 10px;
+}
+
+.minimizable-web-chat > .chat-box * {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+.minimizable-web-chat > .chat-box {
+    position: fixed;
+    bottom: 0;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    max-width: 380px;
+    min-width: 320px;        
+    min-height: 300px;
+    z-index: 3;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+    visibility: hidden;
+}
+
+.minimizable-web-chat > .chat-box.chat-visible {
+    visibility: visible;
+}
+
+.minimizable-web-chat > .chat-box.right {
+    right: 20px;
+}
+
+.minimizable-web-chat > .chat-box header {
+    background-color: #1277EB;
+    height: 8%;
+    min-height: 50px;
+    display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.minimizable-web-chat > .chat-box header .title {
+    margin: auto 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.minimizable-web-chat > .chat-box header .title .picture{
+    width: 32px;
+    height: 32px;
+    background: url('./img/Icono-Chat-Azul.png');
+    background-size: contain;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.minimizable-web-chat > .chat-box header .title .text{
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.minimizable-web-chat > .chat-box header .title .name{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    margin-bottom: -3px;
+}
+
+.minimizable-web-chat > .chat-box header .title .status .green_dot {
+    width: 10px;
+    height: 10px;
+    background-color: #00FF13;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
+.minimizable-web-chat > .chat-box header .title .status label{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+}
+
+.minimizable-web-chat > .chat-box > header > .close-buttons{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+}
+
+.minimizable-web-chat > .chat-box > header > .close-buttons > .minimize-chat > img {
+    width: 22px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.minimizable-web-chat > .chat-box > header > .close-buttons > .close-chat > img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.minimizable-web-chat > .chat-box > #webchat {
+    flex: 1;
+    display: flex;
+    max-height: 92%; /* The rest is for the .chat-box>header */
+    width: 100%;
+
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .2);
+}
+
+/*IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* Fix problem of big white space after content */
+    .minimizable-web-chat > .chat-box > #webchat
+    .css-1t62idy.css-990gl9 .css-gtdio3.css-mfy564 .css-y1c0xs.css-ca0rlf
+    ul.css-ljhy6a.css-7c9av6
+    {
+        height: 100%;
+    }
+
+    /* Hide badge because it's not displaying correctly */
+    .minimizable-web-chat > button.maximize .badge{
+        display: none;
+    }
+
+    .minimizable-web-chat > .chat-box header .title .text{
+        margin-top: 10px;
+    }
+}
+
+/* Bubbles with text and attachment content */
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.bubble{
+    background-color: rgba(236,236,236, 1); /* #ECECEC */
+    border-radius: 10px;
+    border-bottom-left-radius: 0;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.bubble.from-user{
+    background-color: rgba(0, 117, 172, 1); /* #0075AC */
+    color: white;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 10px;
+}
+
+/* Bubbles with card attachment content, like column of buttons or adaptive card */
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.attachment.bubble{
+    border-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton{
+    color: #0075AC;
+    border-color: #0075AC;
+    cursor: pointer;
+    border-bottom: none;
+    outline: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.attachment.bubble .ac-actionSet button.ac-pushButton:active{
+    background-color: #0075AC;
+    color: white;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content .css-cekmep.attachment.bubble .ac-actionSet > div{
+    display: none;
+}
+
+/* Suggested actions */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-ovmwp4 .css-u4skb7 button{
+    border-radius: 10px;
+    outline: none;
+    color: #0075AC;
+    cursor: pointer;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.css-gtdio3.css-ovmwp4 .css-u4skb7 button:active{
+    background-color: #0075AC;
+    color: white;
+}
+
+/* Bubbles in carousel of cards */
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep{
+    background-color: rgba(236,236,236, 1); /* #ECECEC */
+    border-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton{
+    color: #0075AC;
+    border-color: #0075AC;
+    cursor: pointer;
+    border-bottom: none;
+    outline: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton:first-child{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton:last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 1px solid;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet button.ac-pushButton:active{
+    background-color: #0075AC;
+    color: white;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content ul li .css-cekmep .ac-actionSet > div{
+    display: none;
+}
+
+/* Bubble with predefined welcome image */
+.minimizable-web-chat > .chat-box > #webchat 
+.content #welcome-image.css-cekmep.attachment.bubble{
+    border-radius: 10px;
+    background-color: transparent;
+    border: none;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+.content #welcome-image.css-cekmep.attachment.bubble img{
+    border-radius: 10px;
+}
+
+/* Form and with input for entering messages */
+.minimizable-web-chat > .chat-box > #webchat 
+form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc,
+.minimizable-web-chat > .chat-box > #webchat 
+form.css-16qahhi.css-qn8ts8.css-1g3yky9.css-1fe8kfc input{
+    background-color: #EDF0F5;
+}
+
+/* Upload file button */
+.minimizable-web-chat > .chat-box > #webchat 
+.css-1lzfo2b.css-14x775w{
+    display: none;
+}
+
+/* Button for sending messages */
+.minimizable-web-chat > .chat-box > #webchat 
+button.css-115fwte{
+    background-color: #0075AC;
+}
+.minimizable-web-chat > .chat-box > #webchat 
+button.css-115fwte svg{
+    fill: #FFFFFF;
+}​
