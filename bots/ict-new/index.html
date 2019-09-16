@@ -64,21 +64,6 @@
         };
     }
 
-      window.fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST' })
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (json) {
-          const token = json.token;
 
-          window.WebChat.renderWebChat({
-            directLine: window.WebChat.createDirectLine({
-              token: token
-            })
-          }, document.getElementById('webchat'));
-
-          document.querySelector('#webchat > *').focus();
-        });
-    </script>
   <script type="text/javascript" src="index_bundle.js"></script></body>
 </html>
