@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="../public/favicon.ico">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <script src="https://unpkg.com/adaptivecards/dist/adaptivecards.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser-polyfill.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href=" ../public/manifest.json">
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,7 +28,7 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root" role="main"></div>
+    <div id="mr_sloth_root" role="main"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -36,5 +39,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script type="text/javascript" src="index_bundle.js"></script></body>
+    <script>
+      // This code is modified to run in browser without async and Promise support
+   if (!String.prototype.endsWith) { //Polyfill for IE
+     String.prototype.endsWith = function(suffix) {
+         return this.indexOf(suffix, this.length - suffix.length) !== -1;
+     };
+ }
+ </script>
+
+  <script type="text/javascript" src="https://gpbot.azureedge.net/ict/webchat/newversion/index_bundle.js"></script></body>
 </html>
