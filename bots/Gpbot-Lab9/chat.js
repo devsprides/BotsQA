@@ -45,6 +45,7 @@
         jQuery(document).ready(function($) {
 
             
+            
             userId = generateUserId();
             user = { id: userId };
             directLineConn = window.WebChat.createDirectLine({ 
