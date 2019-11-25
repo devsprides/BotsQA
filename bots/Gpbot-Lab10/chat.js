@@ -164,7 +164,7 @@
                 from: user,
                 name: 'requestWelcomeDialog',
                 type: 'event',
-                value: 9.9505468 |-84.0832419
+                value: '9.9505468 |-84.0832419'
             })
             .subscribe(function(id){
                 console.log('"trigger requestWelcomeDialog" sent');
